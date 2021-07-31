@@ -17,6 +17,7 @@
     --body-text: 14px;
     --body-text-sm: 12px;
     --btn-text: 16px;
+    --btn-text-sm: 13px;
 
     --font-light: 300;
     --font-regular: 400;
@@ -290,6 +291,10 @@ p {
     display: none;
 }
 
+.align-self-end {
+    align-self: flex-end;
+}
+
 .align-items-center {
     align-items: center;
 }
@@ -324,6 +329,10 @@ p {
 
 .justify-content-around {
     justify-content: space-around;
+}
+
+.justify-self-end {
+    justify-self: flex-end;
 }
 
 
@@ -403,6 +412,11 @@ p {
     color: white !important;
 }
 
+.text-right {
+    text-align: right;
+}
+
+
 @media only screen and (max-width: 700px) {
     .heading-1 {
         font-size: 36px;
@@ -459,6 +473,11 @@ p {
     cursor: pointer;
 }
 
+.btn-sm {
+    padding: 6px 16px;
+    font-size: var(--btn-text-sm);
+}
+
 .btn-circle {
     width: 60px;
     height: 60px;
@@ -494,9 +513,24 @@ p {
     color: var(--primary-alt);
 }
 
-.btn-icon-left {
+.btn-icon-left,
+.btn-icon-left-sm {
     display: flex;
     align-items: center;
+}
+
+.btn-icon-left-sm i {
+    font-size: var(--heading-4);
+    margin-right: .3rem;
+    transition: .3s ease;
+    margin-left: 0;
+}
+
+.btn-icon-right-sm i {
+    font-size: var(--heading-4);
+    margin-left: .3rem;
+    transition: .3s ease;
+    margin-right: 0;
 }
 
 .btn-icon-left i {
@@ -505,7 +539,8 @@ p {
     transition: .3s ease;
 }
 
-.btn-icon-right {
+.btn-icon-right,
+.btn-icon-right-sm {
     display: flex;
     align-items: center;
 }
@@ -520,6 +555,10 @@ p {
     .btn {
         padding: 10px 24px;
         font-size: 14px;
+    }
+
+    .btn-sm {
+        padding: 6px 16px;
     }
 
     .btn-circle {
@@ -539,6 +578,10 @@ p {
         font-size: 14px;
     }
 
+    .btn-sm {
+        padding: 6px 16px;
+    }
+
     .btn-circle {
         width: 40px;
         height: 40px;
@@ -547,6 +590,26 @@ p {
     .btn i {
         font-size: 18px;
     }
+}
+
+/* ==========================BADGE============================= */
+.badge {
+    box-sizing: border-box;
+    padding: .2rem .7rem;
+    border-radius: 2rem;
+    width: max-content !important;
+    font-size: var(--body-text-sm);
+    font-weight: var(--font-semibold);
+}
+
+.badge-primary {
+    background-color: var(--primary);
+    color: white;
+}
+
+.badge-outline-primary {
+    color: var(--primary);
+    border: 1px solid var(--primary);
 }
 
 /* =================CARD================= */
@@ -615,6 +678,14 @@ p {
 
 .card-title-dark {
     color: white;
+}
+
+.card-subtitle {
+    font-size: var(--body-text-sm);
+    font-weight: var(--font-semibold);
+    color: var(--text-secondary);
+    margin-bottom: .3rem;
+    text-transform: uppercase;
 }
 
 @media only screen and (max-width: 700px) {
@@ -742,7 +813,6 @@ p {
     font-size: var(--heading-3);
     color: var(--text-dark);
     font-weight: var(--font-bold);
-    margin-bottom: .5rem;
 }
 
 .alert-close-icon {
@@ -770,7 +840,6 @@ p {
     .alert-content {
         width: 100%;
         padding: 1rem 1.7rem;
-        border-radius: 0;
     }
 
     .alert-title {
@@ -782,7 +851,6 @@ p {
     .alert-content {
         width: 100%;
         padding: 1rem 1.7rem;
-        border-radius: 0;
     }
 
     .alert-title {
@@ -1239,12 +1307,13 @@ p {
     .bottom-menu-footer {
         display: flex;
         width: 100%;
-        justify-content: flex-end;
+        justify-content: center;
+        margin-top: 1rem;
     }
 
     .bottom-menu-close::before {
-        font-size: var(--heading-3);
-        color: var(--text-secondary);
+        font-size: 24px;
+        color: var(--primary);
     }
 
     .bottom-menu-body {

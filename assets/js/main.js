@@ -142,9 +142,9 @@ function bottomNav() {
 
 function project() {
     let data = [
-        ['Front End Developer', 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil consectetur.', 'https://ariwiradana.github.io/karenshouseubud/'],
-        ['UI/UX Designer', 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil consectetur.'],
-        ['Music Producer', 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil consectetur.'],
+        ['Karens House', 'Web Development', 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil consectetur.', 'https://ariwiradana.github.io/karenshouseubud/'],
+        ['Sipandu Beradat', 'UI/UX', 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil consectetur.'],
+        ['Engine Room Club', 'Graphic Design', 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil consectetur.'],
     ];
 
     $.each(data, function (i, obj) {
@@ -152,13 +152,14 @@ function project() {
             <div class="card project-item" data-aos="fade-right" data-aos-duration="1000">
                 <div class="card-img-top">
                     <div class="card-img-overlay mr-1 mb-1">
-                        <button class="btn-circle btn-primary btn-project" id="btn-project-${i}" data-title="${obj[0]}" data-link="${obj[2]}"><i class="uil uil-angle-right"></i></button>
+                        <button class="btn-circle btn-primary btn-project" id="btn-project-${i}" data-title="${obj[0]}" data-link="${obj[3]}" data-subtitle="${obj[1]}"><i class="uil uil-angle-right"></i></button>
                     </div>
                     <img class="card-img" src="https://source.unsplash.com/random?sig=${i + 1}&${obj[0].toLowerCase()}" alt="">
                 </div>
                 <div class="card-body" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="300">
                     <div class="card-title">${obj[0]}</div>
-                    <p class="body-text">${obj[1]}</p>
+                    <p class="body-text">${obj[2]}</p>
+                    <div class="badge badge-outline-primary mt-1 text-right">${obj[1]}</div>
                 </div>
             </div>
         `);
@@ -166,10 +167,18 @@ function project() {
         $('.btn-project').click(function () {
             let title = $(this).data("title");
             let link = $(this).data("link");
+            let subtitle = $(this).data("subtitle");
+
+            if (link == 'undefined') {
+                $('.btn-alert-visit').hide();
+            } else {
+                $('.btn-alert-visit').show();
+            }
 
             $('.alert-container').addClass('alert-active');
             $('.alert-link').attr('href', link);
             $('.alert-title').text(title);
+            $('.alert-subtitle').text(subtitle);
         });
     })
 
