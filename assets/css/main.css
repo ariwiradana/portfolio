@@ -110,20 +110,22 @@ p {
 }
 
 ::-webkit-scrollbar {
-    width: 10px;
+    width: 5px;
 }
 
 ::-webkit-scrollbar-track {
-    background: #f1f1f1;
+    background: var(--border-light);
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #888;
+    background: var(--text-secondary);
+    border-radius: 2rem;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #555;
+    background: var(--primary-alt);
 }
+
 
 /* ===================REUSABLE==================== */
 
@@ -303,6 +305,10 @@ p {
 
 .h-100 {
     height: 100%;
+}
+
+.bg-primary {
+    background-color: var(--primary);
 }
 
 .d-flex {
@@ -1067,12 +1073,13 @@ p {
 
 @media only screen and (min-width:700px) and (max-width:1024px) {
     .bottom-nav-container {
+        display: block;
         position: fixed;
         bottom: 0;
         left: 0;
+        right: 0;
         width: 100%;
         z-index: 1000;
-        display: block;
     }
 
     .bottom-nav-content {
@@ -1084,23 +1091,16 @@ p {
         padding: .5rem 1rem;
     }
 
-    .bottom-nav-item {
-        display: flex;
-        align-items: center;
-    }
-
     .bottom-nav-light {
         background-color: white;
         transition: .5s ease;
-        border-top: solid 1px;
-        border-color: var(--border-light);
+        border-top: 1px solid var(--border-light);
     }
 
     .bottom-nav-dark {
         background-color: var(--text-dark);
         transition: .5s ease;
-        border-top: solid 1px;
-        border-color: var(--border-dark);
+        border-top: 1px solid var(--border-dark);
     }
 
     .bottom-nav-title {
@@ -1111,32 +1111,24 @@ p {
         font-weight: var(--font-bold);
     }
 
-    .bottom-nav-icon-top::before {
-        font-size: 20px;
-        color: var(--text-dark);
-        cursor: pointer;
-        animation: bottomAngleAnim .5s infinite ease;
+    .bottom-nav-item {
+        display: flex;
+        align-items: center;
     }
 
-    .bottom-nav-icon-top-dark::before {
-        font-size: 20px;
-        color: white;
-        cursor: pointer;
-        animation: bottomAngleAnim .5s infinite ease;
-    }
-
-    .bottom-dark-mode-container i {
-        margin-right: 1rem;
-        color: var(--primary);
+    .bottom-nav-icon {
         font-size: 18px;
+        margin-left: 1rem;
+        color: var(--text-dark);
     }
 
-    .bottom-dark-mode-container svg {
-        width: 20px;
-        height: 20px;
-        fill: var(--primary);
-        margin-top: 5px;
-        margin-right: 1rem;
+    .bottom-nav-icon-dark {
+        color: white;
+    }
+
+    .botttom-nav-darkmode-icon {
+        color: var(--primary);
+        font-size: 19px;
     }
 }
 
@@ -1385,7 +1377,7 @@ p {
     }
 
     .bottom-menu-icon {
-        min-width: 33%;
+        min-width: 25%;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -1706,6 +1698,10 @@ p {
     color: white;
 }
 
+.about-social {
+    display: none;
+}
+
 @media only screen and (max-width: 700px) {
     .about-data-wide {
         display: none;
@@ -1745,10 +1741,22 @@ p {
         font-size: var(--heading-3);
     }
 
-    .btn-cv button {
-        width: 100%;
+    .about-btn-container {
         display: flex;
-        justify-content: center;
+        align-items: center;
+    }
+
+    .about-btn-container a {
+        margin-right: 1rem;
+    }
+
+    .btn-about-social {
+        font-size: 18px;
+        color: var(--primary);
+    }
+
+    .about-social {
+        display: block;
     }
 }
 
@@ -1765,7 +1773,7 @@ p {
     }
 
     .about-img-container {
-        height: 50vh;
+        height: 70vh;
     }
 
     .about-item:last-child {
@@ -1783,6 +1791,24 @@ p {
 
     .about-title {
         font-size: var(--heading-3);
+    }
+
+    .about-btn-container {
+        display: flex;
+        align-items: center;
+    }
+
+    .about-btn-container a {
+        margin-right: 1.3rem;
+    }
+
+    .btn-about-social {
+        font-size: 18px;
+        color: var(--primary);
+    }
+
+    .about-social {
+        display: block;
     }
 }
 
@@ -1962,5 +1988,117 @@ p {
     .contact-icon {
         font-size: var(--heading-3);
         color: var(--primary);
+    }
+}
+
+/* ==============================FOOTER================================ */
+.footer-container {
+    width: 100%;
+    box-sizing: border-box;
+    background-color: var(--primary);
+}
+
+.footer-content-web {
+    display: flex;
+    box-sizing: border-box;
+    padding: 1.7rem 6rem;
+    width: 100%;
+    align-items: center;
+    justify-content: space-evenly;
+    transition: .5s ease;
+}
+
+.footer-container-dark {
+    background-color: var(--text-dark);
+    border-top: solid 1px var(--border-dark);
+    transition: .5s ease;
+}
+
+.footer-social-icon::before {
+    font-size: 16px;
+    color: white;
+    margin-right: 1.5rem;
+    transition: .5s ease;
+}
+
+
+.footer-link {
+    font-size: 14px;
+    font-weight: var(--font-medium);
+    color: white;
+    transition: .5s ease;
+}
+
+.footer-content-mobile {
+    display: none;
+}
+
+@media only screen and (max-width: 700px) {
+    .footer-content-mobile {
+        display: block;
+    }
+
+    .footer-container {
+        padding: 0;
+    }
+
+    .footer-content-web {
+        display: none;
+    }
+
+    .footer-content-mobile {
+        box-sizing: border-box;
+        padding: 3rem;
+        padding-bottom: 5rem;
+    }
+
+    .footer-link {
+        margin-bottom: 1rem;
+        font-size: var(--body-text);
+    }
+
+    .footer-social-icon::before {
+        margin-bottom: 4rem;
+    }
+
+    .copyright-text {
+        font-size: var(--body-text-sm);
+        font-weight: var(--font-light);
+        color: white;
+    }
+}
+
+@media only screen and (min-width: 700px) and (max-width: 1024px) {
+    .footer-content-mobile {
+        display: block;
+    }
+
+    .footer-container {
+        padding: 0;
+    }
+
+    .footer-content-web {
+        display: none;
+    }
+
+    .footer-content-mobile {
+        box-sizing: border-box;
+        padding: 3rem;
+        padding-bottom: 5rem;
+    }
+
+    .footer-link {
+        margin-bottom: 1rem;
+        font-size: var(--body-text);
+    }
+
+    .footer-social-icon::before {
+        margin-bottom: 4rem;
+    }
+
+    .copyright-text {
+        font-size: var(--body-text-sm);
+        font-weight: var(--font-light);
+        color: white;
     }
 }

@@ -62,7 +62,11 @@ function darkModeToggle() {
         $('.form-input').toggleClass('form-input-dark');
 
         // contact
-        $('.contact-title').toggleClass('contact-title-dark')
+        $('.contact-title').toggleClass('contact-title-dark');
+
+        // footer
+        $('.footer-container').toggleClass('footer-container-dark');
+
     });
 }
 
