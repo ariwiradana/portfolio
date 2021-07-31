@@ -65,7 +65,7 @@ function bottomMenu() {
         $('.bottom-menu-container').toggleClass('bottom-menu-active');
     });
 
-    $('.bottom-menu-container, .bottom-menu-close').click(function () {
+    $('.bottom-menu-container, .bottom-menu-close, body').click(function () {
         $(this).removeClass('bottom-menu-active');
     });
 }
