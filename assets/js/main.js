@@ -17,18 +17,18 @@ function darkModeToggle() {
         // left nav
         $('.left-nav-light').toggleClass('left-nav-dark');
         $('.left-nav-separator').toggleClass('left-nav-separator-dark');
-        $('.left-nav-icon').toggleClass('uil-sun uil-moon')
+        $('.left-nav-icon').toggleClass('uil-moon uil-sun')
 
         // bottom nav
         $('.bottom-nav-title').toggleClass('text-light');
         $('.bottom-nav-content').toggleClass('bottom-nav-light bottom-nav-dark');
         $('.bottom-nav-icon').toggleClass('bottom-nav-icon-dark');
-        $('.botttom-nav-darkmode-icon').toggleClass('uil-sun uil-moon')
+        $('.botttom-nav-darkmode-icon').toggleClass('uil-moon uil-sun')
 
         // mobile nav
         $('.light-icon').toggleClass('icon-hide');
         $('.dark-icon').toggleClass('icon-hide');
-        $('.nav-toggle-dark-mode-icon').toggleClass('uil-sun uil-moon');
+        $('.nav-toggle-dark-mode-icon').toggleClass('uil-moon uil-sun');
         $('.nav-bars-icon').toggleClass('nav-bars-icon-dark')
 
         // bottom menu
@@ -55,8 +55,14 @@ function darkModeToggle() {
         $('.alert-content').toggleClass('alert-light alert-dark');
         $('.alert-title').toggleClass('alert-title-dark');
 
+        // about
+        $('.about-title').toggleClass('about-title-dark');
+
         // form
         $('.form-input').toggleClass('form-input-dark');
+
+        // contact
+        $('.contact-title').toggleClass('contact-title-dark')
     });
 }
 
@@ -120,7 +126,7 @@ function Alert() {
 
 function leftNav() {
     $('.left-nav-separator').click(function () {
-        $('.left-nav-container').toggleClass('left-nav-active')
+        $('.left-nav-container').toggleClass('left-nav-active');
     })
 }
 
@@ -154,7 +160,7 @@ function project() {
                     <div class="card-img-overlay mr-1 mb-1">
                         <button class="btn-circle btn-primary btn-project" id="btn-project-${i}" data-title="${obj[0]}" data-link="${obj[3]}" data-subtitle="${obj[1]}"><i class="uil uil-angle-right"></i></button>
                     </div>
-                    <img class="card-img" src="https://source.unsplash.com/random?sig=${i + 1}&${obj[0].toLowerCase()}" alt="">
+                    <img class="card-img" src="https://source.unsplash.com/random?sig=${i + 1}&website}" alt="">
                 </div>
                 <div class="card-body" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="300">
                     <div class="card-title">${obj[0]}</div>
