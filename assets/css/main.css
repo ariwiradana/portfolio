@@ -1822,6 +1822,7 @@ p {
 .project-container {
     width: 100%;
     box-sizing: border-box;
+    padding-top: 5rem;
 }
 
 .project-content {
@@ -1908,6 +1909,8 @@ p {
     width: 100%;
     overflow: hidden;
     box-sizing: border-box;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
 }
 
 .contact-content {
