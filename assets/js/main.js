@@ -135,19 +135,22 @@ function leftNav() {
 }
 
 function bottomNav() {
-    let projects = $("#projects").offset().top;
-    let about = $('#about').offset().top;
-    let contact = $('#contact').offset().top;
+    $(window).scroll(function () {
+        let scrollTop = Math.round($(window).scrollTop() + $(window).height());
+        let about = Math.round($('#about').offset().top) + 200;
+        let projects = Math.round($('#projects').offset().top) + 200;
+        let contact = Math.round($('#contact').offset().top) + 200;
 
-    let $window = $(window).scroll(function () {
-        if ($window.scrollTop() > projects) {
-            $('.bottom-nav-title').text('projects');
-        } else if ($window.scrollTop() > about) {
-            $('.bottom-nav-title').text('About')
-        } else if ($window.scrollTop() > contact) {
-            $('.bottom-nav-title').text('Contact')
+        if (scrollTop < about) {
+            $('.bottom-nav-title').text('Home');
+        } else if (scrollTop > about && scrollTop < projects) {
+            $('.bottom-nav-title').text('About');
+        } else if (scrollTop > projects && scrollTop < contact) {
+            $('.bottom-nav-title').text('Projects');
+        } else if (scrollTop > contact) {
+            $('.bottom-nav-title').text('Contact');
         }
-    });
+    })
 }
 
 function project() {
