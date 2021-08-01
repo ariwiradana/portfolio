@@ -143,12 +143,16 @@ function bottomNav() {
 
         if (scrollTop < about) {
             $('.bottom-nav-title').text('Home');
+            $('#bottom-nav-link').attr('href', '#home');
         } else if (scrollTop > about && scrollTop < projects) {
             $('.bottom-nav-title').text('About');
+            $('#bottom-nav-link').attr('href', '#about');
         } else if (scrollTop > projects && scrollTop < contact) {
             $('.bottom-nav-title').text('Projects');
+            $('#bottom-nav-link').attr('href', '#projects');
         } else if (scrollTop > contact) {
             $('.bottom-nav-title').text('Contact');
+            $('#bottom-nav-link').attr('href', '#contact');
         }
     })
 }
