@@ -10,6 +10,15 @@
    <!-- CSS -->
    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+      integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+   <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+      integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+   <!-- USER CSS -->
    <link rel="stylesheet" href="assets/css/main.css">
 </head>
 
@@ -39,8 +48,23 @@
    <div class="left-nav-container">
       <div class="left-nav-content" data-aos="fade-right" data-aos-duration="1000">
          <div class="left-nav-item left-nav-light">
-            <i class="dark-mode-toggle left-nav-icon uil uil-moon"></i>
-            <i class="left-nav-separator uil uil-angle-right"></i>
+            <a href="#home" id="left-home">
+               <i class="left-nav-icon uil uil-estate"></i>
+               <span class="tooltip tooltip-primary"></span>
+            </a>
+            <a href="#about" id="left-about">
+               <i class="left-nav-icon uil uil-user"></i>
+               <span class="tooltip tooltip-primary"></span>
+            </a>
+            <a href="#projects" id="left-projects">
+               <i class="left-nav-icon uil uil-web-grid"></i>
+               <span class="tooltip tooltip-primary"></span>
+            </a>
+            <a href="#contact" id="left-contact">
+               <i class="left-nav-icon uil uil-mobile-android"></i>
+               <span class="tooltip tooltip-primary"></span>
+            </a>
+            <i class="dark-mode-toggle left-nav-icon uil uil-moon left-darkmode-icon"></i>
          </div>
       </div>
    </div>
@@ -91,22 +115,21 @@
       <div class="nav-content nav-light">
          <div class="nav-item">
             <a href="">
-               <div class="nav-logo heading-3">Logo</div>
+               <div class="nav-logo heading-3">Portofolio</div>
             </a>
-            <div class="ml-1-sm bottom-nav-title">Home</div>
          </div>
          <div class="nav-item">
-            <a href="#top" class="nav-link">
-               <div class="heading-4 nav-link-light">Home</div>
+            <a href="#top" class="nav-link nav-active">
+               <div class="heading-5 nav-link-light">Home</div>
             </a>
             <a href="#about" class="nav-link">
-               <div class="heading-4 nav-link-light">About</div>
+               <div class="heading-5 nav-link-light">About</div>
             </a>
             <a href="#projects" class="nav-link">
-               <div class="heading-4 nav-link-light">Projects</div>
+               <div class="heading-5 nav-link-light">Projects</div>
             </a>
             <a href="#contact" class="nav-link">
-               <div class="heading-4 nav-link-light">Contact</div>
+               <div class="heading-5 nav-link-light">Contact</div>
             </a>
             <div class="nav-link dark-mode-toggle">
                <svg class="dark-mode-icon light-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -159,7 +182,8 @@
                   data-aos-delay="400">Lorem
                   ipsum dolor sit amet consectetur, adipisicing elit. Aperiam quam
                   sunt architecto molestias, itaque aspernatur dolores praesentium.</p>
-               <div class="d-flex mt-1" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="600">
+               <div class="d-flex mt-1 align-items-center" data-aos="fade-right" data-aos-duration="1000"
+                  data-aos-delay="600">
                   <a href="mailto:ariwiradana5@gmail.com" target="_blank">
                      <button class="btn btn-primary btn-icon-left btn-web-hero"><i
                            class="uil uil-envelope-edit"></i>Email</button>
@@ -171,12 +195,6 @@
             <a href="mailto:ariwiradana5@gmail.com" target="_blank" class="w-100">
                <button class="btn btn-primary btn-icon-left"><i class="uil uil-envelope-edit"></i>
                   Email</button>
-            </a>
-            <a href="#about">
-               <div class="d-flex align-items-center mt-1">
-                  <i class="uil uil-mouse-alt icon-md text-primary"></i>
-                  <div class="ml-1-sm body-text text-primary">Scroll Down</div>
-               </div>
             </a>
          </div>
       </div>
@@ -240,7 +258,6 @@
    <div id="projects"></div>
    <div class="container project-container" data-aos="fade-up" data-aos-duration="1000">
       <div class="heading-3 mb-2">Projects</div>
-      <div class="owl owl-theme"></div>
       <div class="project-content">
 
       </div>
@@ -348,6 +365,11 @@
    <!-- SCRIPTS -->
    <script src="assets/js/jquery/jquery-3.6.0.js"></script>
    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+      integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+   <!-- USER JS -->
    <script src="assets/js/main.js"></script>
 </body>
 

@@ -9,15 +9,15 @@ $(document).ready(function () {
     bottomMenu();
 });
 
-function darkModeToggle() {
+const darkModeToggle = () => {
     $('.dark-mode-toggle').click(function () {
         // body
         $('body').toggleClass('light-mode dark-mode');
 
         // left nav
         $('.left-nav-light').toggleClass('left-nav-dark');
-        $('.left-nav-separator').toggleClass('left-nav-separator-dark');
-        $('.left-nav-icon').toggleClass('uil-moon uil-sun')
+        $('.left-darkmode-icon').toggleClass('uil-moon uil-sun');
+        $('.left-nav-icon').toggleClass('left-nav-icon-dark');
 
         // bottom nav
         $('.bottom-nav-title').toggleClass('text-light');
@@ -70,7 +70,7 @@ function darkModeToggle() {
     });
 }
 
-function bottomMenu() {
+const bottomMenu = () => {
     $('.btn-bars').click(function () {
         $('.bottom-menu-container').toggleClass('bottom-menu-active');
     });
@@ -78,9 +78,10 @@ function bottomMenu() {
     $('.bottom-menu-container, .bottom-menu-close, body').click(function () {
         $(this).removeClass('bottom-menu-active');
     });
+
 }
 
-function navScroll() {
+const navScroll = () => {
     let lastScrollTop = 0;
     $(window).scroll(function (event) {
         let st = $(this).scrollTop();
@@ -97,8 +98,8 @@ function navScroll() {
 
             setTimeout(function () {
                 $('.alert-container').removeClass('alert-active');
-                $('.left-nav-container').removeClass('left-nav-active');
                 $('.bottom-menu-container').removeClass('bottom-menu-active');
+                $('.left-nav-container').addClass('left-nav-active');
             }, 500);
 
         } else {
@@ -112,52 +113,105 @@ function navScroll() {
                 'transition': '.4s ease'
             });
 
+
             setTimeout(function () {
                 $('.alert-container').removeClass('alert-active');
-                $('.left-nav-container').removeClass('left-nav-active');
                 $('.bottom-menu-container').removeClass('bottom-menu-active');
+                $('.left-nav-container').removeClass('left-nav-active');
             }, 500);
         }
         lastScrollTop = st;
     });
 }
 
-function Alert() {
-    $('.alert-close-icon').click(function () {
+const Alert = () => {
+    $('.alert-close-icon, .alert-container').click(function () {
         $('.alert-container').removeClass('alert-active');
-    })
+    });
 }
 
-function leftNav() {
-    $('.left-nav-separator').click(function () {
-        $('.left-nav-container').toggleClass('left-nav-active');
-    })
+const leftNav = () => {
+    const tooltipToggle = (e) => {
+        $(`#left-${e}`).hover(() => {
+            $(`#left-${e} .tooltip`).text(`${e}`);
+            $(`#left-${e} .tooltip`).toggleClass('tooltip-active');
+        });
+    }
+
+    tooltipToggle('home');
+    tooltipToggle('about');
+    tooltipToggle('projects');
+    tooltipToggle('contact');
+
 }
 
-function bottomNav() {
-    $(window).scroll(function () {
+const bottomNav = () => {
+
+    $(window).scroll(() => {
         let scrollTop = Math.round($(window).scrollTop() + $(window).height());
-        let about = Math.round($('#about').offset().top) + 200;
-        let projects = Math.round($('#projects').offset().top) + 200;
-        let contact = Math.round($('#contact').offset().top) + 200;
+        let about = Math.round($('#about').offset().top) + 250;
+        let projects = Math.round($('#projects').offset().top) + 250;
+        let contact = Math.round($('#contact').offset().top) + 250;
+        const leftNav = document.querySelectorAll('.left-nav-item a i');
+        const navLink = document.querySelectorAll('.nav-link');
 
         if (scrollTop < about) {
             $('.bottom-nav-title').text('Home');
             $('#bottom-nav-link').attr('href', '#home');
+
+            for (let nav of navLink) {
+                nav.classList.remove('nav-active');
+            }
+            navLink[0].classList.add('nav-active');
+
+            for (let i of leftNav) {
+                i.classList.remove('left-nav-icon-active');
+            }
+            leftNav[0].classList.add('left-nav-icon-active');
         } else if (scrollTop > about && scrollTop < projects) {
             $('.bottom-nav-title').text('About');
             $('#bottom-nav-link').attr('href', '#about');
+
+            for (let nav of navLink) {
+                nav.classList.remove('nav-active');
+            }
+            navLink[1].classList.add('nav-active');
+
+            for (let i of leftNav) {
+                i.classList.remove('left-nav-icon-active');
+            }
+            leftNav[1].classList.add('left-nav-icon-active');
         } else if (scrollTop > projects && scrollTop < contact) {
             $('.bottom-nav-title').text('Projects');
             $('#bottom-nav-link').attr('href', '#projects');
+
+            for (let nav of navLink) {
+                nav.classList.remove('nav-active');
+            }
+            navLink[2].classList.add('nav-active');
+
+            for (let i of leftNav) {
+                i.classList.remove('left-nav-icon-active');
+            }
+            leftNav[2].classList.add('left-nav-icon-active');
         } else if (scrollTop > contact) {
             $('.bottom-nav-title').text('Contact');
             $('#bottom-nav-link').attr('href', '#contact');
+
+            for (let nav of navLink) {
+                nav.classList.remove('nav-active');
+            }
+            navLink[3].classList.add('nav-active');
+
+            for (let i of leftNav) {
+                i.classList.remove('left-nav-icon-active');
+            }
+            leftNav[3].classList.add('left-nav-icon-active');
         }
     })
 }
 
-function project() {
+const project = () => {
     let data = [
         ['Karens House', 'Web Development', 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil consectetur.', 'https://ariwiradana.github.io/karenshouseubud/'],
         ['Sipandu Beradat', 'UI/UX', 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil consectetur.'],
@@ -169,7 +223,7 @@ function project() {
             <div class="card project-item" data-aos="fade-right" data-aos-duration="1000">
                 <div class="card-img-top">
                     <div class="card-img-overlay mr-1 mb-1">
-                        <button class="btn-circle btn-primary btn-project" id="btn-project-${i}" data-title="${obj[0]}" data-link="${obj[3]}" data-subtitle="${obj[1]}"><i class="uil uil-angle-right"></i></button>
+                        <button class="btn-circle btn-primary btn-project" id="btn-project-${i}" data-title="${obj[0]}" data-link="${obj[3]}" data-subtitle="${obj[1]}"><i class="uil uil-ellipsis-h"></i></button>
                     </div>
                     <img class="card-img" src="https://source.unsplash.com/random?sig=${i + 1}&website}" alt="">
                 </div>
@@ -197,8 +251,28 @@ function project() {
             $('.alert-title').text(title);
             $('.alert-subtitle').text(subtitle);
         });
-    })
+    });
 
+    const projectItem = document.querySelectorAll('.project-item');
+    for (let item of projectItem) {
+        item.addEventListener('mousedown', (e) => {
+            e.preventDefault()
+            console.log('clicked');
+            item.classList.add('project-grabbing');
+        })
+    }
 
+    for (let item of projectItem) {
+        item.addEventListener('mouseup', () => {
+            console.log('not clicked');
+            item.classList.remove('project-grabbing');
+        })
+    }
 
+    for (let item of projectItem) {
+        item.addEventListener('mouseleave', () => {
+            console.log('not clicked');
+            item.classList.remove('project-grabbing');
+        })
+    }
 }
