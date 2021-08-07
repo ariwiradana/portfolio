@@ -54,6 +54,14 @@
     --icon-xl: 32px;
 }
 
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -278,6 +286,150 @@ p {
 
 .ml-3 {
     margin-left: 3rem;
+}
+
+.p-1-sm {
+    padding: .3rem;
+}
+
+.px-1-sm {
+    padding-left: .3rem;
+    padding-right: .3rem;
+}
+
+.py-1-sm {
+    padding-top: .3rem;
+    padding-bottom: .3rem;
+}
+
+.pt-1-sm {
+    padding-top: .3rem;
+}
+
+.pr-1-sm {
+    padding-right: .3rem;
+}
+
+.pb-1-sm {
+    padding-bottom: .3rem;
+}
+
+.pl-1-sm {
+    padding-left: .3rem;
+}
+
+.p-0 {
+    padding: 1rem;
+}
+
+.px-0 {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.py-0 {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.pt-0 {
+    padding-top: 0;
+}
+
+.pr-0 {
+    padding-right: 0;
+}
+
+.pb-0 {
+    padding-bottom: 0;
+}
+
+.pl-0 {
+    padding-left: 0;
+}
+
+.p-1 {
+    padding: 1rem;
+}
+
+.px-1 {
+    padding: 0 1rem;
+}
+
+.py-1 {
+    padding: 1rem 0;
+}
+
+.pt-1 {
+    padding-top: 1rem;
+}
+
+.pr-1 {
+    padding-right: 1rem;
+}
+
+.pb-1 {
+    padding-bottom: 1rem;
+}
+
+.pl-1 {
+    padding-left: 1rem;
+}
+
+.p-2 {
+    padding: 2rem;
+}
+
+.px-2 {
+    padding: 0 2rem;
+}
+
+.py-2 {
+    padding: 2rem 0;
+}
+
+.pt-2 {
+    padding-top: 2rem;
+}
+
+.pr-2 {
+    padding-right: 2rem;
+}
+
+.pb-2 {
+    padding-bottom: 2rem;
+}
+
+.pl-2 {
+    padding-left: 2rem;
+}
+
+.p-3 {
+    padding: 3rem;
+}
+
+.px-3 {
+    padding: 0 3rem;
+}
+
+.py-3 {
+    padding: 3rem 0;
+}
+
+.pt-3 {
+    padding-top: 3rem;
+}
+
+.pr-3 {
+    padding-right: 3rem;
+}
+
+.pb-3 {
+    padding-bottom: 3rem;
+}
+
+.pl-3 {
+    padding-left: 3rem;
 }
 
 .w-25 {
@@ -1205,15 +1357,11 @@ p {
 .nav-light {
     background-color: white;
     transition: .5s ease;
-    border-bottom: solid 1px;
-    border-color: var(--border-light);
 }
 
 .nav-dark {
     background-color: var(--text-dark);
     transition: .5s ease;
-    border-bottom: solid 1px;
-    border-color: var(--border-dark);
 }
 
 .nav-content {
@@ -1356,7 +1504,7 @@ p {
         height: 28px;
     }
 
-    .nav-logo{
+    .nav-logo {
         font-size: var(--heading-4);
     }
 }
@@ -1403,7 +1551,7 @@ p {
         height: 28px;
     }
 
-    .nav-logo{
+    .nav-logo {
         font-size: var(--heading-4);
     }
 }
@@ -1904,6 +2052,7 @@ p {
     display: flex;
     align-items: center;
     overflow: auto;
+    transition: .3s ease;
 }
 
 .project-item {
@@ -1915,6 +2064,7 @@ p {
 
 .project-grabbing {
     cursor: grabbing;
+    cursor: -webkit-grabbing;
     transition: .4s ease;
 }
 

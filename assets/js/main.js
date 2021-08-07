@@ -235,47 +235,57 @@ const project = () => {
                 </div>
             </div>
         `;
-
         projectContent.insertAdjacentHTML('beforeend', row);
 
-        $('.btn-project').click(function () {
-            let title = $(this).data("title");
-            let link = $(this).data("link");
-            let subtitle = $(this).data("subtitle");
+        for (let btnProject of document.querySelectorAll('.btn-project')) {
+            btnProject.addEventListener('click', (e) => {
+                let title = btnProject.dataset.title;
+                let link = btnProject.dataset.link;
+                let subtitle = btnProject.dataset.subtitle;
 
-            if (link == 'undefined') {
-                $('.btn-alert-visit').hide();
-            } else {
-                $('.btn-alert-visit').show();
-            }
+                if (link == 'undefined') {
+                    document.querySelector('.btn-alert-visit').classList.add('hide');
+                } else {
+                    document.querySelector('.btn-alert-visit').classList.add('show');
+                }
 
-            $('.alert-container').addClass('alert-active');
-            $('.alert-link').attr('href', link);
-            $('.alert-title').text(title);
-            $('.alert-subtitle').text(subtitle);
-        });
+                document.querySelector('.alert-container').classList.add('alert-active');
+                document.querySelector('.alert-link').setAttribute('href', link);
+                document.querySelector('.alert-title').innerHTML = title;
+                document.querySelector('.alert-subtitle').innerHTML = subtitle;
+            });
+
+        }
+    });
+    
+    const slider = document.querySelector('.project-content');
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    slider.addEventListener('mousedown', (e) => {
+        isDown = true;
+        slider.classList.add('project-grabbing');
+        startX = e.pageX - slider.offsetLeft;
+        scrollLeft = slider.scrollLeft;
     });
 
-    const projectItem = document.querySelectorAll('.project-item');
-    for (let item of projectItem) {
-        item.addEventListener('mousedown', (e) => {
-            e.preventDefault()
-            console.log('clicked');
-            item.classList.add('project-grabbing');
-        })
-    }
+    slider.addEventListener('mouseleave', () => {
+        isDown = false;
+        slider.classList.remove('project-grabbing');
+    });
 
-    for (let item of projectItem) {
-        item.addEventListener('mouseup', () => {
-            console.log('not clicked');
-            item.classList.remove('project-grabbing');
-        })
-    }
+    slider.addEventListener('mouseup', () => {
+        isDown = false;
+        slider.classList.remove('project-grabbing');
+    });
 
-    for (let item of projectItem) {
-        item.addEventListener('mouseleave', () => {
-            console.log('not clicked');
-            item.classList.remove('project-grabbing');
-        })
-    }
+    slider.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - slider.offsetLeft;
+        const walk = (x - startX) * 3; //scroll-fast
+        slider.scrollLeft = scrollLeft - walk;
+        console.log(walk);
+    });
 }
