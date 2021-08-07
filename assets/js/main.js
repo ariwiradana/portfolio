@@ -213,19 +213,20 @@ const bottomNav = () => {
 
 const project = () => {
     let data = [
-        ['Karens House', 'Web Development', 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil consectetur.', 'https://ariwiradana.github.io/karenshouseubud/'],
+        ['Karéns House', 'Web Development', 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil consectetur.', 'https://ariwiradana.github.io/karenshouseubud/'],
         ['Sipandu Beradat', 'UI/UX', 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil consectetur.'],
         ['Engine Room Club', 'Graphic Design', 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil consectetur.'],
     ];
+    const projectContent = document.querySelector('.project-content');
 
-    $.each(data, function (i, obj) {
-        $('.project-content').append(`
+    data.forEach((obj, i) => {
+        const row = `
             <div class="card project-item" data-aos="fade-right" data-aos-duration="1000">
                 <div class="card-img-top">
                     <div class="card-img-overlay mr-1 mb-1">
                         <button class="btn-circle btn-primary btn-project" id="btn-project-${i}" data-title="${obj[0]}" data-link="${obj[3]}" data-subtitle="${obj[1]}"><i class="uil uil-ellipsis-h"></i></button>
                     </div>
-                    <img class="card-img" src="https://source.unsplash.com/random?sig=${i + 1}&website}" alt="">
+                    <img class="card-img" src="https://source.unsplash.com/random?sig=${i + 1}&tech" alt="">
                 </div>
                 <div class="card-body" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="300">
                     <div class="card-title">${obj[0]}</div>
@@ -233,7 +234,9 @@ const project = () => {
                     <div class="badge badge-outline-primary mt-1 text-right">${obj[1]}</div>
                 </div>
             </div>
-        `);
+        `;
+
+        projectContent.insertAdjacentHTML('beforeend', row);
 
         $('.btn-project').click(function () {
             let title = $(this).data("title");
