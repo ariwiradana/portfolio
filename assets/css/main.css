@@ -10,7 +10,7 @@
 
 :root {
     /* font */
-    --heading-1: 64px;
+    --heading-1: 48px;
     --heading-2: 36px;
     --heading-3: 24px;
     --heading-4: 18px;
@@ -618,6 +618,7 @@ p {
     font-size: var(--heading-1);
     color: var(--text-dark);
     font-weight: var(--font-bold);
+    line-height: 1.3;
 }
 
 .heading-2 {
@@ -1366,16 +1367,17 @@ p {
 
 .nav-content {
     width: 100%;
-    box-sizing: border-box;
-    padding: 24px 130px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    box-sizing: border-box;
+    padding: 1rem 8rem;
 }
 
 .nav-item {
     display: flex;
     align-items: center;
+    position: relative;
 }
 
 .nav-item:last-child {
@@ -1383,6 +1385,7 @@ p {
 }
 
 .nav-link {
+    box-sizing: border-box;
     margin: 0 2rem;
 }
 
@@ -2053,19 +2056,21 @@ p {
     align-items: center;
     overflow: auto;
     transition: .3s ease;
+    border-radius: 2rem;
+    overflow: hidden;
 }
 
 .project-item {
     min-width: 38vw;
     cursor: pointer;
     transition: .4s ease;
-    transform: scale(1);
 }
 
 .project-grabbing {
     cursor: grabbing;
     cursor: -webkit-grabbing;
     transition: .4s ease;
+    transform: scale(1.015);
 }
 
 .project-item:not(:last-child) {
@@ -2087,6 +2092,10 @@ p {
 .btn-project:focus {
     transition: 1s ease;
     transform: rotate(-90deg);
+}
+
+.alert-btn-hide{
+    display: none;
 }
 
 @media only screen and (max-width: 600px) {

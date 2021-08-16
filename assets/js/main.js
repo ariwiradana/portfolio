@@ -216,6 +216,7 @@ const project = () => {
         ['Karéns House', 'Web Development', 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil consectetur.', 'https://ariwiradana.github.io/karenshouseubud/'],
         ['Sipandu Beradat', 'UI/UX', 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil consectetur.'],
         ['Engine Room Club', 'Graphic Design', 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil consectetur.'],
+        ['Danapati Entertainment', 'Graphic Design', 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil consectetur.']
     ];
     const projectContent = document.querySelector('.project-content');
 
@@ -224,7 +225,9 @@ const project = () => {
             <div class="card project-item" data-aos="fade-right" data-aos-duration="1000">
                 <div class="card-img-top">
                     <div class="card-img-overlay mr-1 mb-1">
-                        <button class="btn-circle btn-primary btn-project" id="btn-project-${i}" data-title="${obj[0]}" data-link="${obj[3]}" data-subtitle="${obj[1]}"><i class="uil uil-ellipsis-h"></i></button>
+                        <button class="btn-circle btn-primary btn-project link" id="btn-project-${i}" data-title="${obj[0]}" data-link="${obj[3]}" data-subtitle="${obj[1]}">
+                            <i class="uil uil-ellipsis-h link" data-title="${obj[0]}" data-link="${obj[3]}" data-subtitle="${obj[1]}"></i>
+                        </button>
                     </div>
                     <img class="card-img" src="https://source.unsplash.com/random?sig=${i + 1}&tech" alt="">
                 </div>
@@ -236,28 +239,32 @@ const project = () => {
             </div>
         `;
         projectContent.insertAdjacentHTML('beforeend', row);
+    });
 
-        for (let btnProject of document.querySelectorAll('.btn-project')) {
-            btnProject.addEventListener('click', (e) => {
-                let title = btnProject.dataset.title;
-                let link = btnProject.dataset.link;
-                let subtitle = btnProject.dataset.subtitle;
+    document.addEventListener('click', (e) => {
+        if (e.target.classList.contains('link')) {
+            const title = e.target.dataset.title
+            const subtitle = e.target.dataset.subtitle
+            const link = e.target.dataset.link
 
-                if (link == 'undefined') {
-                    document.querySelector('.btn-alert-visit').classList.add('hide');
-                } else {
-                    document.querySelector('.btn-alert-visit').classList.add('show');
-                }
+            if (link == 'undefined') {
+                document.querySelector('.btn-alert-visit').classList.add('alert-btn-hide');
+            } else {
+                document.querySelector('.btn-alert-visit').classList.remove('alert-btn-hide');
+            }
+            
+            document.querySelector('.alert-container').classList.remove('alert-active');
 
+
+            setTimeout(() => {
                 document.querySelector('.alert-container').classList.add('alert-active');
                 document.querySelector('.alert-link').setAttribute('href', link);
                 document.querySelector('.alert-title').innerHTML = title;
                 document.querySelector('.alert-subtitle').innerHTML = subtitle;
-            });
-
+            }, 400);
         }
-    });
-    
+    })
+
     const slider = document.querySelector('.project-content');
     let isDown = false;
     let startX;
@@ -265,7 +272,9 @@ const project = () => {
 
     slider.addEventListener('mousedown', (e) => {
         isDown = true;
-        slider.classList.add('project-grabbing');
+        if (e.target.classList.contains('card-img') || e.target.classList.contains('card-body') || e.target.classList.contains('card-title') || e.target.classList.contains('card-text') || e.target.classList.contains('badge')) {
+            slider.classList.add('project-grabbing')
+        }
         startX = e.pageX - slider.offsetLeft;
         scrollLeft = slider.scrollLeft;
     });
@@ -286,6 +295,5 @@ const project = () => {
         const x = e.pageX - slider.offsetLeft;
         const walk = (x - startX) * 3; //scroll-fast
         slider.scrollLeft = scrollLeft - walk;
-        console.log(walk);
     });
 }
