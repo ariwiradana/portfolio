@@ -49,7 +49,6 @@ const darkModeToggle = () => {
         // card
         $('.card').toggleClass('card-dark');
         $('.card-img-top').toggleClass('card-img-top-dark');
-        $('.card-title').toggleClass('card-title-dark');
 
         // alert
         $('.alert-content').toggleClass('alert-light alert-dark');
@@ -213,29 +212,43 @@ const bottomNav = () => {
 
 const project = () => {
     let data = [
-        ['Karéns House', 'Web Development', 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil consectetur.', 'https://ariwiradana.github.io/karenshouseubud/'],
-        ['Sipandu Beradat', 'UI/UX', 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil consectetur.'],
-        ['Engine Room Club', 'Graphic Design', 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil consectetur.'],
-        ['Danapati Entertainment', 'Graphic Design', 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil consectetur.']
+        {
+            name: "Karéns House",
+            category: 'Web Development',
+            thumb: 'Karens House.png',
+            link: 'https://ariwiradana.github.io/karenshouseubud/'
+        },
+        {
+            name: "Sipandu Beradat",
+            category: 'Web Front End',
+            thumb: 'Sipandu Beradat Web.png',
+            link: ''
+        },
+        {
+            name: "Sipandu Beradat",
+            category: 'Mobile UI/UX Design',
+            thumb: 'Sipandu Beradat Mobile.png',
+            link: ''
+        },
     ];
     const projectContent = document.querySelector('.project-content');
 
-    data.forEach((obj, i) => {
+    data.map((obj, i) => {
         const row = `
             <div class="card project-item" data-aos="fade-right" data-aos-duration="1000">
                 <div class="card-img-top">
                     <div class="card-img-overlay mr-1 mb-1">
-                        <button class="btn-circle btn-primary btn-project link" id="btn-project-${i}" data-title="${obj[0]}" data-link="${obj[3]}" data-subtitle="${obj[1]}">
-                            <i class="uil uil-ellipsis-h link" data-title="${obj[0]}" data-link="${obj[3]}" data-subtitle="${obj[1]}"></i>
+                        <button class="btn-circle btn-primary btn-project link" id="btn-project-${i}" data-title="${obj.name}" data-link="${obj.link}" data-subtitle="${obj.category}">
+                            <i class="uil uil-ellipsis-h link" data-title="${obj.name}" data-link="${obj.link}" data-subtitle="${obj.category}"></i>
                         </button>
                     </div>
-                    <img class="card-img" src="https://source.unsplash.com/random?sig=${i + 1}&tech" alt="">
+                    <img class="card-img" src="assets/img/${obj.thumb}" alt="">
                 </div>
                 <div class="card-body" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="300">
-                    <div class="card-title">${obj[0]}</div>
-                    <p class="body-text">${obj[2]}</p>
-                    <div class="badge badge-outline-primary mt-1 text-right">${obj[1]}</div>
+                    <div class="card-title">${obj.name}</div>
+                    <div class="badge badge-primary text-right">${obj.category}</div>
                 </div>
+
             </div>
         `;
         projectContent.insertAdjacentHTML('beforeend', row);
@@ -252,7 +265,7 @@ const project = () => {
             } else {
                 document.querySelector('.btn-alert-visit').classList.remove('alert-btn-hide');
             }
-            
+
             document.querySelector('.alert-container').classList.remove('alert-active');
 
 
