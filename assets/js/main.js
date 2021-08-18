@@ -49,6 +49,7 @@ const darkModeToggle = () => {
         // card
         $('.card').toggleClass('card-dark');
         $('.card-img-top').toggleClass('card-img-top-dark');
+        $('.card-title').toggleClass('card-title-dark');
 
         // alert
         $('.alert-content').toggleClass('alert-light alert-dark');
@@ -59,6 +60,10 @@ const darkModeToggle = () => {
 
         // form
         $('.form-input').toggleClass('form-input-dark');
+
+        // skills
+        $('.progress-bar').toggleClass('progress-bar-dark');
+        $('.skills-title').toggleClass('skills-title-dark');
 
         // contact
         $('.contact-title').toggleClass('contact-title-dark');
@@ -150,6 +155,7 @@ const bottomNav = () => {
         let scrollTop = Math.round($(window).scrollTop() + $(window).height());
         let about = Math.round($('#about').offset().top) + 250;
         let projects = Math.round($('#projects').offset().top) + 250;
+        let skills = Math.round($('#skills').offset().top) + 250;
         let contact = Math.round($('#contact').offset().top) + 250;
         const leftNav = document.querySelectorAll('.left-nav-item a i');
         const navLink = document.querySelectorAll('.nav-link');
@@ -180,9 +186,22 @@ const bottomNav = () => {
                 i.classList.remove('left-nav-icon-active');
             }
             leftNav[1].classList.add('left-nav-icon-active');
-        } else if (scrollTop > projects && scrollTop < contact) {
+        } else if (scrollTop > projects && scrollTop < skills) {
             $('.bottom-nav-title').text('Projects');
             $('#bottom-nav-link').attr('href', '#projects');
+
+            for (let nav of navLink) {
+                nav.classList.remove('nav-active');
+            }
+            navLink[2].classList.add('nav-active');
+
+            for (let i of leftNav) {
+                i.classList.remove('left-nav-icon-active');
+            }
+            leftNav[2].classList.add('left-nav-icon-active');
+        } else if (scrollTop > skills && scrollTop < contact) {
+            $('.bottom-nav-title').text('Skills');
+            $('#bottom-nav-link').attr('href', '#skills');
 
             for (let nav of navLink) {
                 nav.classList.remove('nav-active');
@@ -211,8 +230,7 @@ const bottomNav = () => {
 }
 
 const project = () => {
-    let data = [
-        {
+    let data = [{
             name: "Karéns House",
             category: 'Web Development',
             thumb: 'Karens House.png',
@@ -220,7 +238,7 @@ const project = () => {
         },
         {
             name: "Sipandu Beradat",
-            category: 'Web Front End',
+            category: 'Web Front End Development',
             thumb: 'Sipandu Beradat Web.png',
             link: ''
         },
@@ -246,7 +264,7 @@ const project = () => {
                 </div>
                 <div class="card-body" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="300">
                     <div class="card-title">${obj.name}</div>
-                    <div class="badge badge-primary text-right">${obj.category}</div>
+                    <div class="badge badge-outline-primary text-right">${obj.category}</div>
                 </div>
 
             </div>
@@ -260,14 +278,13 @@ const project = () => {
             const subtitle = e.target.dataset.subtitle
             const link = e.target.dataset.link
 
-            if (link == 'undefined') {
+            if (!link) {
                 document.querySelector('.btn-alert-visit').classList.add('alert-btn-hide');
             } else {
                 document.querySelector('.btn-alert-visit').classList.remove('alert-btn-hide');
             }
 
             document.querySelector('.alert-container').classList.remove('alert-active');
-
 
             setTimeout(() => {
                 document.querySelector('.alert-container').classList.add('alert-active');
@@ -310,3 +327,46 @@ const project = () => {
         slider.scrollLeft = scrollLeft - walk;
     });
 }
+
+// skills
+const skillContent = document.querySelector('.skills-content')
+let skills = [{
+        skill: "HTML - CSS",
+        percent: 85
+    },
+    {
+        skill: "Adobe XD",
+        percent: 85
+    },
+    {
+        skill: "Adobe Illustrator",
+        percent: 80
+    },
+    {
+        skill: "Adobe Photoshop",
+        percent: 75
+    },
+    {
+        skill: "Javascript",
+        percent: 70
+    },
+    {
+        skill: "PHP",
+        percent: 60
+    },
+]
+
+
+skills.map(item => {
+    const content = `
+        <div class="skills-item">
+            <div class="skills-header" data-aos="fade-right" data-aos-duration="1000">
+                <div class="skills-title">${item.skill}</div>
+                <div class="skills-percent">${item.percent}%</div>
+            </div>
+            <div class="progress-bar progress-bar-light" data-aos="fade-left" data-aos-duration="1000">
+                <div class="progress" style="width:${item.percent}%"></div>
+            </div>
+        </div>`
+    skillContent.insertAdjacentHTML('beforeend', content)
+})
