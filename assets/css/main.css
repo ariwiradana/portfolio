@@ -1143,7 +1143,7 @@ p {
     height: 100%;
     position: fixed;
     bottom: 0;
-    left: -100px;
+    left: -200px;
     z-index: 999;
     transition: .5s ease;
 }
