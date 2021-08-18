@@ -1,237 +1,366 @@
 <!DOCTYPE html>
 <html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Portofolio | Ari Wiradana</title>
 
-<head>
-   <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Portofolio | Ari Wiradana</title>
+      <!-- CSS -->
+      <link
+         rel="stylesheet"
+         href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
+      />
+      <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+      <link
+         rel="stylesheet"
+         href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+         integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+         crossorigin="anonymous"
+         referrerpolicy="no-referrer"
+      />
+      <link
+         rel="stylesheet"
+         href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+         integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+         crossorigin="anonymous"
+         referrerpolicy="no-referrer"
+      />
 
-   <!-- CSS -->
-   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
-      integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
-      crossorigin="anonymous" referrerpolicy="no-referrer" />
-   <link rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
-      integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
-      crossorigin="anonymous" referrerpolicy="no-referrer" />
+      <!-- USER CSS -->
+      <link rel="stylesheet" href="assets/css/main.css" />
+   </head>
 
-   <!-- USER CSS -->
-   <link rel="stylesheet" href="assets/css/main.css">
-</head>
-
-<body class="light-mode" id="top">
-
-   <!-- ALERT -->
-   <div class="alert-container">
-      <div class="alert">
-         <div class="alert-content alert-light">
-            <div class="d-flex align-items-center justify-content-between">
-               <div class="alert-subtitle"></div>
+   <body class="light-mode" id="top">
+      <!-- ALERT -->
+      <div class="alert-container">
+         <div class="alert">
+            <div class="alert-content alert-light">
+               <div class="d-flex align-items-center justify-content-between">
+                  <div class="alert-subtitle"></div>
+               </div>
+               <div
+                  class="
+                     d-flex
+                     justify-content-between
+                     align-items-center
+                     w-100
+                  "
+               >
+                  <div class="d-flex align-items-center">
+                     <div class="alert-title"></div>
+                     <a class="alert-link" href="" target="_blank">
+                        <button
+                           class="
+                              ml-1
+                              btn
+                              btn-sm
+                              btn-primary
+                              btn-icon-right-sm
+                              btn-alert-visit
+                           "
+                        >
+                           Demo
+                        </button>
+                     </a>
+                  </div>
+                  <i class="ml-1 uil uil-times alert-close-icon"></i>
+               </div>
             </div>
-            <div class="d-flex justify-content-between align-items-center w-100">
-               <div class="d-flex align-items-center">
-                  <div class="alert-title"></div>
-                  <a class="alert-link" href="" target="_blank">
-                     <button class="ml-1 btn btn-sm btn-primary btn-icon-right-sm btn-alert-visit">Demo</button>
+         </div>
+      </div>
+
+      <!-- LEFT NAVGATION WEB -->
+      <div class="left-nav-container">
+         <div
+            class="left-nav-content"
+            data-aos="fade-right"
+            data-aos-duration="1000"
+         >
+            <div class="left-nav-item left-nav-light">
+               <a href="#home" id="left-home">
+                  <i class="left-nav-icon uil uil-estate"></i>
+                  <span class="tooltip tooltip-primary"></span>
+               </a>
+               <a href="#about" id="left-about">
+                  <i class="left-nav-icon uil uil-user"></i>
+                  <span class="tooltip tooltip-primary"></span>
+               </a>
+               <a href="#projects" id="left-projects">
+                  <i class="left-nav-icon uil uil-web-grid"></i>
+                  <span class="tooltip tooltip-primary"></span>
+               </a>
+               <a href="#skills" id="left-skills">
+                  <i class="left-nav-icon uil uil-cog"></i>
+                  <span class="tooltip tooltip-primary"></span>
+               </a>
+               <a href="#contact" id="left-contact">
+                  <i class="left-nav-icon uil uil-mobile-android"></i>
+                  <span class="tooltip tooltip-primary"></span>
+               </a>
+               <i
+                  class="
+                     dark-mode-toggle
+                     left-nav-icon
+                     uil uil-moon
+                     left-darkmode-icon
+                  "
+               ></i>
+            </div>
+         </div>
+      </div>
+
+      <!-- BOTTOM NAV -->
+      <div class="bottom-nav-container">
+         <div class="bottom-nav-content bottom-nav-light">
+            <a href="#home" id="bottom-nav-link">
+               <div class="bottom-nav-title">Home</div>
+            </a>
+            <div class="bottom-nav-item">
+               <i
+                  class="
+                     dark-mode-toggle
+                     uil uil-moon
+                     bottom-nav-icon
+                     botttom-nav-darkmode-icon
+                  "
+               ></i>
+               <i class="uil uil-apps bottom-nav-icon btn-bars"></i>
+            </div>
+         </div>
+      </div>
+
+      <!-- BOTTOM MENU -->
+      <div class="bottom-menu-container">
+         <div class="bottom-menu-content bottom-menu-light">
+            <div class="bottom-menu-body">
+               <a class="bottom-menu-icon" href="#top">
+                  <i class="uil uil-estate"></i>
+                  <div class="bottom-menu-title">Home</div>
+               </a>
+               <a class="bottom-menu-icon" href="#about">
+                  <i class="uil uil-user"></i>
+                  <div class="bottom-menu-title">About</div>
+               </a>
+               <a class="bottom-menu-icon" href="#projects">
+                  <i class="uil uil-web-grid"></i>
+                  <div class="bottom-menu-title">Projects</div>
+               </a>
+               <a class="bottom-menu-icon" href="#skills">
+                  <i class="uil uil-cog"></i>
+                  <div class="bottom-menu-title">Skills</div>
+               </a>
+               <a class="bottom-menu-icon" href="#contact">
+                  <i class="uil uil-mobile-android"></i>
+                  <div class="bottom-menu-title">Contact</div>
+               </a>
+            </div>
+            <div class="bottom-menu-footer">
+               <i class="uil uil-times bottom-menu-close"></i>
+            </div>
+         </div>
+      </div>
+
+      <!-- NAVBAR -->
+      <div class="nav-container">
+         <div class="nav-content nav-light">
+            <div class="nav-item">
+               <a href="">
+                  <div class="nav-logo heading-3">Portofolio</div>
+               </a>
+            </div>
+            <div class="nav-item">
+               <a href="#top" class="nav-link nav-active">
+                  <div class="heading-5 nav-link-light">Home</div>
+               </a>
+               <a href="#about" class="nav-link">
+                  <div class="heading-5 nav-link-light">About</div>
+               </a>
+               <a href="#projects" class="nav-link">
+                  <div class="heading-5 nav-link-light">Projects</div>
+               </a>
+               <a href="#skills" class="nav-link">
+                  <div class="heading-5 nav-link-light">Skills</div>
+               </a>
+               <a href="#contact" class="nav-link">
+                  <div class="heading-5 nav-link-light">Contact</div>
+               </a>
+               <div class="nav-link dark-mode-toggle">
+                  <svg
+                     class="dark-mode-icon light-icon"
+                     xmlns="http://www.w3.org/2000/svg"
+                     viewBox="0 0 24 24"
+                  >
+                     <path
+                        d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z"
+                     />
+                  </svg>
+                  <svg
+                     class="dark-mode-icon icon-hide dark-icon"
+                     xmlns="http://www.w3.org/2000/svg"
+                     viewBox="0 0 24 24"
+                  >
+                     <path
+                        d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z"
+                     />
+                  </svg>
+               </div>
+            </div>
+            <div class="nav-item">
+               <div class="nav-link">
+                  <i
+                     class="
+                        uil uil-moon
+                        dark-mode-toggle
+                        nav-toggle-dark-mode-icon
+                     "
+                  ></i>
+               </div>
+               <div class="nav-link btn-bars">
+                  <i class="uil uil-apps nav-bars-icon"></i>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <!-- HERO -->
+      <div id="home"></div>
+      <div class="hero-container">
+         <div class="hero-item">
+            <div class="hero-text-container">
+               <div
+                  class="hero-text-item"
+                  data-aos="fade-left"
+                  data-aos-duration="1000"
+                  data-aos-delay="1000"
+               >
+                  <a
+                     href="https://api.whatsapp.com/send?phone=+6281246768627"
+                     target="_blank"
+                  >
+                     <i class="uil uil-whatsapp hero-social-icon"></i>
+                  </a>
+                  <a
+                     href="https://www.instagram.com/ariwiradana/"
+                     target="_blank"
+                  >
+                     <i class="uil uil-instagram hero-social-icon"></i>
+                  </a>
+                  <a href="https://github.com/ariwiradana" target="_blank">
+                     <i class="uil uil-github-alt hero-social-icon"></i>
+                  </a>
+                  <a
+                     href="https://www.youtube.com/channel/UCKU7_NiRjiFIocuGdano69w"
+                     target="_blank"
+                  >
+                     <i class="uil uil-youtube hero-social-icon"></i>
                   </a>
                </div>
-               <i class="ml-1 uil uil-times alert-close-icon"></i>
-            </div>
-         </div>
-      </div>
-   </div>
-
-   <!-- LEFT NAVGATION WEB -->
-   <div class="left-nav-container">
-      <div class="left-nav-content" data-aos="fade-right" data-aos-duration="1000">
-         <div class="left-nav-item left-nav-light">
-            <a href="#home" id="left-home">
-               <i class="left-nav-icon uil uil-estate"></i>
-               <span class="tooltip tooltip-primary"></span>
-            </a>
-            <a href="#about" id="left-about">
-               <i class="left-nav-icon uil uil-user"></i>
-               <span class="tooltip tooltip-primary"></span>
-            </a>
-            <a href="#projects" id="left-projects">
-               <i class="left-nav-icon uil uil-web-grid"></i>
-               <span class="tooltip tooltip-primary"></span>
-            </a>
-            <a href="#skills" id="left-skills">
-               <i class="left-nav-icon uil uil-cog"></i>
-               <span class="tooltip tooltip-primary"></span>
-            </a>
-            <a href="#contact" id="left-contact">
-               <i class="left-nav-icon uil uil-mobile-android"></i>
-               <span class="tooltip tooltip-primary"></span>
-            </a>
-            <i class="dark-mode-toggle left-nav-icon uil uil-moon left-darkmode-icon"></i>
-         </div>
-      </div>
-   </div>
-
-
-   <!-- BOTTOM NAV -->
-   <div class="bottom-nav-container">
-      <div class="bottom-nav-content bottom-nav-light">
-         <a href="#home" id="bottom-nav-link">
-            <div class="bottom-nav-title">Home</div>
-         </a>
-         <div class="bottom-nav-item">
-            <i class="dark-mode-toggle uil uil-moon bottom-nav-icon botttom-nav-darkmode-icon"></i>
-            <i class="uil uil-apps bottom-nav-icon btn-bars"></i>
-         </div>
-      </div>
-   </div>
-
-   <!-- BOTTOM MENU -->
-   <div class="bottom-menu-container">
-      <div class="bottom-menu-content bottom-menu-light">
-         <div class="bottom-menu-body">
-            <a class="bottom-menu-icon" href="#top">
-               <i class="uil uil-estate"></i>
-               <div class="bottom-menu-title">Home</div>
-            </a>
-            <a class="bottom-menu-icon" href="#about">
-               <i class="uil uil-user"></i>
-               <div class="bottom-menu-title">About</div>
-            </a>
-            <a class="bottom-menu-icon" href="#projects">
-               <i class="uil uil-web-grid"></i>
-               <div class="bottom-menu-title">Projects</div>
-            </a>
-            <a class="bottom-menu-icon" href="#skills">
-               <i class="uil uil-cog"></i>
-               <div class="bottom-menu-title">Skills</div>
-            </a>
-            <a class="bottom-menu-icon" href="#contact">
-               <i class="uil uil-mobile-android"></i>
-               <div class="bottom-menu-title">Contact</div>
-            </a>
-         </div>
-         <div class="bottom-menu-footer">
-            <i class="uil uil-times bottom-menu-close"></i>
-         </div>
-      </div>
-   </div>
-
-   <!-- NAVBAR -->
-   <div class="nav-container">
-      <div class="nav-content nav-light">
-         <div class="nav-item">
-            <a href="">
-               <div class="nav-logo heading-3">Portofolio</div>
-            </a>
-         </div>
-         <div class="nav-item">
-            <a href="#top" class="nav-link nav-active">
-               <div class="heading-5 nav-link-light">Home</div>
-            </a>
-            <a href="#about" class="nav-link">
-               <div class="heading-5 nav-link-light">About</div>
-            </a>
-            <a href="#projects" class="nav-link">
-               <div class="heading-5 nav-link-light">Projects</div>
-            </a>
-            <a href="#skills" class="nav-link">
-               <div class="heading-5 nav-link-light">Skills</div>
-            </a>
-            <a href="#contact" class="nav-link">
-               <div class="heading-5 nav-link-light">Contact</div>
-            </a>
-            <div class="nav-link dark-mode-toggle">
-               <svg class="dark-mode-icon light-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                  <path
-                     d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z" />
-               </svg>
-               <svg class="dark-mode-icon icon-hide dark-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                  <path
-                     d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z" />
-               </svg>
-            </div>
-         </div>
-         <div class="nav-item">
-            <div class="nav-link">
-               <i class="uil uil-moon dark-mode-toggle nav-toggle-dark-mode-icon"></i>
-            </div>
-            <div class="nav-link btn-bars">
-               <i class="uil uil-apps nav-bars-icon"></i>
-            </div>
-         </div>
-      </div>
-   </div>
-
-   <!-- HERO -->
-   <div id="home"></div>
-   <div class="hero-container">
-      <div class="hero-item">
-         <div class="hero-text-container">
-            <div class="hero-text-item" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="1000">
-               <a href="https://api.whatsapp.com/send?phone=+6281246768627" target="_blank">
-                  <i class="uil uil-whatsapp hero-social-icon"></i>
-               </a>
-               <a href="https://www.instagram.com/ariwiradana/" target="_blank">
-                  <i class="uil uil-instagram hero-social-icon"></i>
-               </a>
-               <a href="https://github.com/ariwiradana" target="_blank">
-                  <i class="uil uil-github-alt hero-social-icon"></i>
-               </a>
-               <a href="https://www.youtube.com/channel/UCKU7_NiRjiFIocuGdano69w" target="_blank">
-                  <i class="uil uil-youtube hero-social-icon"></i>
-               </a>
-            </div>
-            <div class="hero-text-item">
-               <div class="heading-4 mb-1" data-aos="fade-right" data-aos-duration="1000">Hi, i'm
-                  Ari Wiradana</div>
-               <div class="heading-1 mb-1" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">
-                  <strong>UI/UX Designer</strong> & <br><strong>Web Front End Dev</strong>
-               </div>
-               <p class="body-text w-75 text-justify" data-aos="fade-right" data-aos-duration="1000"
-                  data-aos-delay="400">Lorem
-                  ipsum dolor sit amet consectetur, adipisicing elit. Aperiam quam
-                  sunt architecto molestias, itaque aspernatur dolores praesentium.</p>
-               <div class="d-flex mt-1 align-items-center" data-aos="fade-right" data-aos-duration="1000"
-                  data-aos-delay="600">
-                  <a href="mailto:ariwiradana5@gmail.com" target="_blank">
-                     <button class="btn btn-primary btn-icon-left btn-web-hero"><i
-                           class="uil uil-envelope-edit"></i>Email</button>
-                  </a>
+               <div class="hero-text-item">
+                  <div
+                     class="heading-4 mb-1"
+                     data-aos="fade-right"
+                     data-aos-duration="1000"
+                  >
+                     Hi, i'm Ari Wiradana
+                  </div>
+                  <div
+                     class="heading-1 mb-1"
+                     data-aos="fade-right"
+                     data-aos-duration="1000"
+                     data-aos-delay="200"
+                  >
+                     <strong>UI/UX Designer</strong> & <br /><strong
+                        >Web Front End Dev</strong
+                     >
+                  </div>
+                  <p
+                     class="body-text w-75 text-justify"
+                     data-aos="fade-right"
+                     data-aos-duration="1000"
+                     data-aos-delay="400"
+                  >
+                     Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                     Aperiam quam sunt architecto molestias, itaque aspernatur
+                     dolores praesentium.
+                  </p>
+                  <div
+                     class="d-flex mt-1 align-items-center"
+                     data-aos="fade-right"
+                     data-aos-duration="1000"
+                     data-aos-delay="600"
+                  >
+                     <a href="mailto:ariwiradana5@gmail.com" target="_blank">
+                        <button
+                           class="btn btn-primary btn-icon-left btn-web-hero"
+                        >
+                           <i class="uil uil-envelope-edit"></i>Email
+                        </button>
+                     </a>
+                  </div>
                </div>
             </div>
-         </div>
-         <div class="hero-btn-container" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="600">
-            <a href="mailto:ariwiradana5@gmail.com" target="_blank" class="w-100">
-               <button class="btn btn-primary btn-icon-left"><i class="uil uil-envelope-edit"></i>
-                  Email</button>
-            </a>
-         </div>
-      </div>
-      <div class="hero-item">
-         <img src="assets/img/undraw_Design_notes_re_eklr.svg" alt="" class="hero-img" data-aos="fade-left"
-            data-aos-duration="1000" data-aos-delay="300">
-      </div>
-   </div>
-
-   <!-- ABOUT -->
-   <div id="about"></div>
-   <div class="container about-container" data-aos="fade-up" data-aos-duration="1000">
-      <div class="heading-3 mb-2">About</div>
-      <div class="about-content">
-         <div class="about-item" data-aos="fade-right" data-aos-duration="1000">
-            <div class="about-img-container">
-               <img src="assets/img/ariw.JPG" alt="" class="about-img">
+            <div
+               class="hero-btn-container"
+               data-aos="fade-right"
+               data-aos-duration="1000"
+               data-aos-delay="600"
+            >
+               <a
+                  href="mailto:ariwiradana5@gmail.com"
+                  target="_blank"
+                  class="w-100"
+               >
+                  <button class="btn btn-primary btn-icon-left">
+                     <i class="uil uil-envelope-edit"></i> Email
+                  </button>
+               </a>
             </div>
          </div>
-         <div class="about-item">
-            <p class="body-text text-justify" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">Lorem,
-               ipsum dolor sit amet
-               consectetur adipisicing elit. Est ut aliquam labore
-               asperiores consectetur dignissimos assumenda, accusamus molestiae. Voluptas amet repellendus suscipit,
-               mollitia repudiandae provident pariatur eius iusto omnis accusantium labore officia architecto.</p>
-            <!-- <div class="about-data about-data-web mt-1 mb-2" data-aos="fade-left" data-aos-duration="1000"
+         <div class="hero-item">
+            <img
+               src="assets/img/undraw_Design_notes_re_eklr.svg"
+               alt=""
+               class="hero-img"
+               data-aos="fade-left"
+               data-aos-duration="1000"
+               data-aos-delay="300"
+            />
+         </div>
+      </div>
+
+      <!-- ABOUT -->
+      <div id="about"></div>
+      <div
+         class="container about-container"
+         data-aos="fade-up"
+         data-aos-duration="1000"
+      >
+         <div class="heading-3 mb-2">About</div>
+         <div class="about-content">
+            <div
+               class="about-item"
+               data-aos="fade-right"
+               data-aos-duration="1000"
+            >
+               <div class="about-img-container">
+                  <img src="assets/img/ariw.JPG" alt="" class="about-img" />
+               </div>
+            </div>
+            <div class="about-item">
+               <p
+                  class="body-text text-justify"
+                  data-aos="fade-left"
+                  data-aos-duration="1000"
+                  data-aos-delay="200"
+               >
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est
+                  ut aliquam labore asperiores consectetur dignissimos
+                  assumenda, accusamus molestiae. Voluptas amet repellendus
+                  suscipit, mollitia repudiandae provident pariatur eius iusto
+                  omnis accusantium labore officia architecto.
+               </p>
+               <!-- <div class="about-data about-data-web mt-1 mb-2" data-aos="fade-left" data-aos-duration="1000"
                data-aos-delay="400">
                <div class="about-data-item">
                   <div class="about-title">02+</div>
@@ -242,156 +371,227 @@
                   <div class="body-text ml-1">Complete<br>projects</div>
                </div>
             </div> -->
-            <div class="about-btn-container mt-2" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="600">
-               <a href="assets/cv/Curriculum Vitae - I Made Ari Wiradana.pdf" target="_blank" download>
-                  <button class="btn btn-primary btn-icon-left"><i class="uil uil-download-alt"></i>Download CV</button>
-               </a>
-               <div class="about-social">
-                  <a href="https://api.whatsapp.com/send?phone=+6281246768627" target="_blank">
-                     <i class="uil uil-whatsapp btn-about-social"></i>
+               <div
+                  class="about-btn-container mt-2"
+                  data-aos="fade-left"
+                  data-aos-duration="1000"
+                  data-aos-delay="600"
+               >
+                  <a
+                     href="assets/cv/Curriculum Vitae - I Made Ari Wiradana.pdf"
+                     target="_blank"
+                     download
+                  >
+                     <button class="btn btn-primary btn-icon-left">
+                        <i class="uil uil-download-alt"></i>Download CV
+                     </button>
                   </a>
-                  <a href="https://www.instagram.com/ariwiradana/" target="_blank">
-                     <i class="uil uil-instagram btn-about-social"></i>
-                  </a>
-                  <a href="https://github.com/ariwiradana" target="_blank">
-                     <i class="uil uil-github-alt btn-about-social"></i>
-                  </a>
-                  <a href="https://www.youtube.com/channel/UCKU7_NiRjiFIocuGdano69w" target="_blank">
-                     <i class="uil uil-youtube btn-about-social"></i>
-                  </a>
+                  <div class="about-social">
+                     <a
+                        href="https://api.whatsapp.com/send?phone=+6281246768627"
+                        target="_blank"
+                     >
+                        <i class="uil uil-whatsapp btn-about-social"></i>
+                     </a>
+                     <a
+                        href="https://www.instagram.com/ariwiradana/"
+                        target="_blank"
+                     >
+                        <i class="uil uil-instagram btn-about-social"></i>
+                     </a>
+                     <a href="https://github.com/ariwiradana" target="_blank">
+                        <i class="uil uil-github-alt btn-about-social"></i>
+                     </a>
+                     <a
+                        href="https://www.youtube.com/channel/UCKU7_NiRjiFIocuGdano69w"
+                        target="_blank"
+                     >
+                        <i class="uil uil-youtube btn-about-social"></i>
+                     </a>
+                  </div>
                </div>
             </div>
          </div>
       </div>
-   </div>
 
-   <!-- PROJECTS -->
-   <div id="projects"></div>
-   <div class="container project-container" data-aos="fade-up" data-aos-duration="1000">
-      <div class="heading-3 mb-2">Projects</div>
-      <div class="project-content">
-
+      <!-- PROJECTS -->
+      <div id="projects"></div>
+      <div
+         class="container project-container"
+         data-aos="fade-up"
+         data-aos-duration="1000"
+      >
+         <div class="heading-3 mb-2">Projects</div>
+         <div class="project-content"></div>
       </div>
-   </div>
 
-   <!-- SKILLS -->
-   <div id="skills"></div>
-   <div class="container skills-container" data-aos="fade-up" data-aos-duration="1000">
-      <div class="heading-3 mb-2">Skills</div>
-      <div class="skills-content">
-
+      <!-- SKILLS -->
+      <div id="skills"></div>
+      <div
+         class="container skills-container"
+         data-aos="fade-up"
+         data-aos-duration="1000"
+      >
+         <div class="heading-3 mb-2">Skills</div>
+         <div class="skills-content"></div>
       </div>
-   </div>
 
-
-   <!-- CONTACT -->
-   <div id="contact"></div>
-   <div class="container contact-container" data-aos="fade-up" data-aos-duration="1000">
-      <div class="heading-3 mb-2">Contact</div>
-      <div class="contact-content">
-         <div class="contact-item" data-aos="fade-left" data-aos-duration="1000">
-            <div class="contact-data">
-               <i class="uil uil-mobile-android contact-icon"></i>
-               <a href="https://api.whatsapp.com/send?phone=+6281246768627" target="_blank" class="ml-1">
-                  <div class="contact-title">Phone</div>
-                  <div class="subtitle-text">+6281 246 768 627</div>
-               </a>
-            </div>
-            <div class="contact-data">
-               <i class="uil uil-envelope contact-icon"></i>
-               <a href="mailto:ariwiradana5@gmail.com" target="_blank" class="ml-1">
-                  <div class="contact-title">Email</div>
-                  <div class="subtitle-text">ariwiradana5@gmail.com</div>
-               </a>
-            </div>
-            <div class="contact-data">
-               <i class="uil uil-map-pin contact-icon"></i>
-               <a href="#" class="ml-1">
-                  <div class="contact-title">Address</div>
-                  <div class="subtitle-text">Jl. Intan Permai, Kerobokan Kelod, Bali</div>
-               </a>
-            </div>
-         </div>
-         <div class="contact-item" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">
-            <form action="">
-               <input type="text" class="form-input form-fill mb-1" placeholder="Subject">
-               <textarea name="" id="" class="form-input form-fill mb-1" placeholder="Message" rows="7"></textarea>
-               <div class="d-flex justify-content-end">
-                  <button class="btn btn-primary btn-icon-right">Send Message<i
-                        class="uil uil-angle-right-b"></i></button>
+      <!-- CONTACT -->
+      <div id="contact"></div>
+      <div
+         class="container contact-container"
+         data-aos="fade-up"
+         data-aos-duration="1000"
+      >
+         <div class="heading-3 mb-2">Contact</div>
+         <div class="contact-content">
+            <div
+               class="contact-item"
+               data-aos="fade-left"
+               data-aos-duration="1000"
+            >
+               <div class="contact-data">
+                  <i class="uil uil-mobile-android contact-icon"></i>
+                  <a
+                     href="https://api.whatsapp.com/send?phone=+6281246768627"
+                     target="_blank"
+                     class="ml-1"
+                  >
+                     <div class="contact-title">Phone</div>
+                     <div class="subtitle-text">+6281 246 768 627</div>
+                  </a>
                </div>
-            </form>
+               <div class="contact-data">
+                  <i class="uil uil-envelope contact-icon"></i>
+                  <a
+                     href="mailto:ariwiradana5@gmail.com"
+                     target="_blank"
+                     class="ml-1"
+                  >
+                     <div class="contact-title">Email</div>
+                     <div class="subtitle-text">ariwiradana5@gmail.com</div>
+                  </a>
+               </div>
+               <div class="contact-data">
+                  <i class="uil uil-map-pin contact-icon"></i>
+                  <a href="#" class="ml-1">
+                     <div class="contact-title">Address</div>
+                     <div class="subtitle-text">
+                        Jl. Intan Permai, Kerobokan Kelod, Bali
+                     </div>
+                  </a>
+               </div>
+            </div>
+            <div
+               class="contact-item"
+               data-aos="fade-right"
+               data-aos-duration="1000"
+               data-aos-delay="200"
+            >
+               <form action="">
+                  <input
+                     type="text"
+                     class="form-input form-fill mb-1"
+                     placeholder="Subject"
+                  />
+                  <textarea
+                     name=""
+                     id=""
+                     class="form-input form-fill mb-1"
+                     placeholder="Message"
+                     rows="7"
+                  ></textarea>
+                  <div class="d-flex justify-content-end">
+                     <button class="btn btn-primary btn-icon-right">
+                        Send Message<i class="uil uil-angle-right-b"></i>
+                     </button>
+                  </div>
+               </form>
+            </div>
          </div>
       </div>
-   </div>
 
-   <!-- FOOTER -->
-   <footer class="container footer-container">
-      <div class="footer-content-web">
-         <div class="footer-link">© 2021 Ari Wiradana</div>
-         <a href="#top">
-            <div class="footer-link">Home</div>
-         </a>
-         <a href="#about">
-            <div class="footer-link">About</div>
-         </a>
-         <a href="#projects">
-            <div class="footer-link">Projects</div>
-         </a>
-         <a href="#contact">
-            <div class="footer-link">Contact</div>
-         </a>
-         <a href="https://api.whatsapp.com/send?phone=+6281246768627" target="_blank">
-            <i class="uil uil-whatsapp footer-social-icon"></i>
-         </a>
-         <a href="https://www.instagram.com/ariwiradana/" target="_blank">
-            <i class="uil uil-instagram footer-social-icon"></i>
-         </a>
-         <a href="https://github.com/ariwiradana" target="_blank">
-            <i class="uil uil-github-alt footer-social-icon"></i>
-         </a>
-         <a href="https://www.youtube.com/channel/UCKU7_NiRjiFIocuGdano69w" target="_blank">
-            <i class="uil uil-youtube footer-social-icon"></i>
-         </a>
-      </div>
-      <div class="footer-content-mobile">
-         <a href="#top">
-            <div class="footer-link">Home</div>
-         </a>
-         <a href="#about">
-            <div class="footer-link">About</div>
-         </a>
-         <a href="#projects">
-            <div class="footer-link">Projects</div>
-         </a>
-         <a href="#contact">
-            <div class="footer-link">Contact</div>
-         </a>
-         <a href="https://api.whatsapp.com/send?phone=+6281246768627" target="_blank">
-            <i class="uil uil-whatsapp footer-social-icon"></i>
-         </a>
-         <a href="https://www.instagram.com/ariwiradana/" target="_blank">
-            <i class="uil uil-instagram footer-social-icon"></i>
-         </a>
-         <a href="https://github.com/ariwiradana" target="_blank">
-            <i class="uil uil-github-alt footer-social-icon"></i>
-         </a>
-         <a href="https://www.youtube.com/channel/UCKU7_NiRjiFIocuGdano69w" target="_blank">
-            <i class="uil uil-youtube footer-social-icon"></i>
-         </a>
-         <div class="copyright-text">© 2021 Ari Wiradana</div>
-      </div>
-   </footer>
+      <!-- FOOTER -->
+      <footer class="container footer-container">
+         <div class="footer-content-web">
+            <div class="footer-link">© 2021 Ari Wiradana</div>
+            <a href="#top">
+               <div class="footer-link">Home</div>
+            </a>
+            <a href="#about">
+               <div class="footer-link">About</div>
+            </a>
+            <a href="#projects">
+               <div class="footer-link">Projects</div>
+            </a>
+            <a href="#contact">
+               <div class="footer-link">Contact</div>
+            </a>
+            <a
+               href="https://api.whatsapp.com/send?phone=+6281246768627"
+               target="_blank"
+            >
+               <i class="uil uil-whatsapp footer-social-icon"></i>
+            </a>
+            <a href="https://www.instagram.com/ariwiradana/" target="_blank">
+               <i class="uil uil-instagram footer-social-icon"></i>
+            </a>
+            <a href="https://github.com/ariwiradana" target="_blank">
+               <i class="uil uil-github-alt footer-social-icon"></i>
+            </a>
+            <a
+               href="https://www.youtube.com/channel/UCKU7_NiRjiFIocuGdano69w"
+               target="_blank"
+            >
+               <i class="uil uil-youtube footer-social-icon"></i>
+            </a>
+         </div>
+         <div class="footer-content-mobile">
+            <a href="#top">
+               <div class="footer-link">Home</div>
+            </a>
+            <a href="#about">
+               <div class="footer-link">About</div>
+            </a>
+            <a href="#projects">
+               <div class="footer-link">Projects</div>
+            </a>
+            <a href="#contact">
+               <div class="footer-link">Contact</div>
+            </a>
+            <a
+               href="https://api.whatsapp.com/send?phone=+6281246768627"
+               target="_blank"
+            >
+               <i class="uil uil-whatsapp footer-social-icon"></i>
+            </a>
+            <a href="https://www.instagram.com/ariwiradana/" target="_blank">
+               <i class="uil uil-instagram footer-social-icon"></i>
+            </a>
+            <a href="https://github.com/ariwiradana" target="_blank">
+               <i class="uil uil-github-alt footer-social-icon"></i>
+            </a>
+            <a
+               href="https://www.youtube.com/channel/UCKU7_NiRjiFIocuGdano69w"
+               target="_blank"
+            >
+               <i class="uil uil-youtube footer-social-icon"></i>
+            </a>
+            <div class="copyright-text">© 2021 Ari Wiradana</div>
+         </div>
+      </footer>
 
-   <!-- SCRIPTS -->
-   <script src="assets/js/jquery/jquery-3.6.0.js"></script>
-   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
-      integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
-      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      <!-- SCRIPTS -->
+      <script src="assets/js/jquery/jquery-3.6.0.js"></script>
+      <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+      <script
+         src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+         integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+         crossorigin="anonymous"
+         referrerpolicy="no-referrer"
+      ></script>
 
-   <!-- USER JS -->
-   <script src="assets/js/main.js"></script>
-</body>
-
+      <!-- USER JS -->
+      <script src="assets/js/main.js"></script>
+   </body>
 </html>
