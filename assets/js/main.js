@@ -145,8 +145,8 @@ const leftNav = () => {
     tooltipToggle('home');
     tooltipToggle('about');
     tooltipToggle('projects');
+    tooltipToggle('skills');
     tooltipToggle('contact');
-
 }
 
 const bottomNav = () => {
