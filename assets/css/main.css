@@ -10,7 +10,7 @@
 
 :root {
    /* font */
-   --heading-1: 48px;
+   --heading-1: 42px;
    --heading-2: 36px;
    --heading-3: 24px;
    --heading-4: 18px;
@@ -765,6 +765,10 @@ p {
 .btn-primary:focus,
 .btn-primary:hover {
    background-color: var(--primary-alt);
+}
+
+.btn-primary:disabled {
+   background-color: var(--primary-disabled);
 }
 
 .btn-light {
@@ -1622,7 +1626,7 @@ p {
    }
 
    .bottom-menu-icon {
-      min-width: 33%;
+      min-width: 25%;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -1742,8 +1746,11 @@ p {
    align-items: center;
 }
 
-.hero-item {
-   flex-grow: 1;
+.hero-item:first-child {
+   flex: 45%;
+}
+.hero-item:last-child {
+   flex: 55%;
 }
 
 .hero-text-container {
@@ -1775,7 +1782,7 @@ p {
 }
 
 .hero-img {
-   width: 100%;
+   width: 90%;
    height: auto;
    background: none !important;
 }
@@ -1788,10 +1795,10 @@ p {
    .hero-container {
       padding: 1.5rem;
       flex-direction: column-reverse;
-      justify-content: flex-end;
-      margin-top: 2rem;
+      justify-content: center;
+      align-items: flex-start;
+      margin-top: 7vh;
    }
-
    .hero-item {
       flex-grow: 0;
    }
@@ -1807,6 +1814,17 @@ p {
 
    .hero-text-item:first-child {
       display: none;
+   }
+
+   .hero-text-item {
+      position: relative;
+      width: 100%;
+   }
+
+   .hero-down-icon {
+      width: 100%;
+      display: flex;
+      justify-content: center;
    }
 
    .hero-text-item .body-text {
@@ -1825,6 +1843,7 @@ p {
       margin-top: 3.2rem;
       height: 60vh;
       max-height: 60vh;
+      justify-content: center;
    }
 
    .hero-item {
@@ -2202,6 +2221,7 @@ p {
 @media only screen and (max-width: 600px) {
    .project-container {
       padding: 1.5rem;
+      overflow-x: hidden;
    }
 
    .project-content {
@@ -2223,6 +2243,7 @@ p {
 @media only screen and (min-width: 600px) and (max-width: 754px) {
    .project-container {
       padding: 1.5rem;
+      overflow-x: hidden;
    }
 
    .project-content {
@@ -2244,6 +2265,7 @@ p {
 @media only screen and (min-width: 754px) and (max-width: 1200px) {
    .project-container {
       padding: 1.5rem 4rem;
+      overflow-x: hidden;
    }
 
    .project-content {
@@ -2300,8 +2322,13 @@ p {
 
 .skills-header {
    display: flex;
-   justify-content: space-between;
    align-items: center;
+}
+
+.skill-icon::before {
+   font-size: 24px;
+   color: var(--primary);
+   margin-right: 0.6rem;
 }
 
 .progress-bar {

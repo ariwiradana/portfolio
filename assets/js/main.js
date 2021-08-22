@@ -203,12 +203,12 @@ const bottomNav = () => {
          for (let nav of navLink) {
             nav.classList.remove("nav-active");
          }
-         navLink[2].classList.add("nav-active");
+         navLink[3].classList.add("nav-active");
 
          for (let i of leftNav) {
             i.classList.remove("left-nav-icon-active");
          }
-         leftNav[2].classList.add("left-nav-icon-active");
+         leftNav[3].classList.add("left-nav-icon-active");
       } else if (scrollTop > contact) {
          $(".bottom-nav-title").text("Contact");
          $("#bottom-nav-link").attr("href", "#contact");
@@ -216,12 +216,12 @@ const bottomNav = () => {
          for (let nav of navLink) {
             nav.classList.remove("nav-active");
          }
-         navLink[3].classList.add("nav-active");
+         navLink[4].classList.add("nav-active");
 
          for (let i of leftNav) {
             i.classList.remove("left-nav-icon-active");
          }
-         leftNav[3].classList.add("left-nav-icon-active");
+         leftNav[4].classList.add("left-nav-icon-active");
       }
    });
 };
@@ -346,26 +346,32 @@ let skills = [
    {
       skill: "HTML - CSS",
       percent: 85,
+      icon: "uil uil-html5",
    },
    {
       skill: "Adobe XD",
       percent: 85,
+      icon: "uil uil-adobe-alt",
    },
    {
-      skill: "Adobe Illustrator",
+      skill: "Adobe Illustrator & Photoshop",
       percent: 80,
-   },
-   {
-      skill: "Adobe Photoshop",
-      percent: 75,
+      icon: "uil uil-adobe",
    },
    {
       skill: "Javascript",
-      percent: 70,
+      percent: 75,
+      icon: "uil uil-java-script",
+   },
+   {
+      skill: "React JS",
+      percent: 65,
+      icon: "uil uil-react",
    },
    {
       skill: "PHP",
-      percent: 60,
+      percent: 55,
+      icon: "fab fa-php",
    },
 ];
 
@@ -373,12 +379,39 @@ skills.map((item) => {
    const content = `
         <div class="skills-item">
             <div class="skills-header" data-aos="fade-right" data-aos-duration="1000">
-                <div class="skills-title">${item.skill}</div>
-                <div class="skills-percent">${item.percent}%</div>
+               <i class="${item.icon} skill-icon"></i>
+               <div class="">
+                  <div class="skills-title">${item.skill}</div>
+                  <div class="skills-percent">${item.percent}%</div>
+               </div>
             </div>
             <div class="progress-bar progress-bar-light" data-aos="fade-left" data-aos-duration="1000">
                 <div class="progress" style="width:${item.percent}%"></div>
             </div>
         </div>`;
    skillContent.insertAdjacentHTML("beforeend", content);
+});
+
+// contact
+const btnContact = document.querySelector(".submit-contact");
+const subject = document.querySelector("#contact-subject");
+const body = document.querySelector("#contact-body");
+
+body.addEventListener("keyup", (e) => {
+   if (e.target.value.length > 5) {
+      btnContact.removeAttribute("disabled");
+   } else {
+      btnContact.setAttribute("disabled", true);
+   }
+});
+
+btnContact.addEventListener("click", (e) => {
+   const formContact = document.querySelector("#form-contact");
+   e.preventDefault();
+
+   window.location.href = `mailto:ariwiradana5@gmail.com?subject=${subject.value}&body=${body.value}`;
+
+   setInterval(() => {
+      formContact.reset();
+   }, 3000);
 });

@@ -26,6 +26,13 @@
          crossorigin="anonymous"
          referrerpolicy="no-referrer"
       />
+      <link
+         rel="stylesheet"
+         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+         integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+         crossorigin="anonymous"
+         referrerpolicy="no-referrer"
+      />
 
       <!-- USER CSS -->
       <link rel="stylesheet" href="assets/css/main.css" />
@@ -134,10 +141,6 @@
       <div class="bottom-menu-container">
          <div class="bottom-menu-content bottom-menu-light">
             <div class="bottom-menu-body">
-               <a class="bottom-menu-icon" href="#top">
-                  <i class="uil uil-estate"></i>
-                  <div class="bottom-menu-title">Home</div>
-               </a>
                <a class="bottom-menu-icon" href="#about">
                   <i class="uil uil-user"></i>
                   <div class="bottom-menu-title">About</div>
@@ -249,12 +252,6 @@
                   <a href="https://github.com/ariwiradana" target="_blank">
                      <i class="uil uil-github-alt hero-social-icon"></i>
                   </a>
-                  <a
-                     href="https://www.youtube.com/channel/UCKU7_NiRjiFIocuGdano69w"
-                     target="_blank"
-                  >
-                     <i class="uil uil-youtube hero-social-icon"></i>
-                  </a>
                </div>
                <div class="hero-text-item">
                   <div
@@ -274,27 +271,17 @@
                         >Web Front End Dev</strong
                      >
                   </div>
-                  <p
-                     class="body-text w-75 text-justify"
-                     data-aos="fade-right"
-                     data-aos-duration="1000"
-                     data-aos-delay="400"
-                  >
-                     Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                     Aperiam quam sunt architecto molestias, itaque aspernatur
-                     dolores praesentium.
-                  </p>
                   <div
                      class="d-flex mt-1 align-items-center"
                      data-aos="fade-right"
                      data-aos-duration="1000"
                      data-aos-delay="600"
                   >
-                     <a href="mailto:ariwiradana5@gmail.com" target="_blank">
+                     <a href="#contact">
                         <button
                            class="btn btn-primary btn-icon-left btn-web-hero"
                         >
-                           <i class="uil uil-envelope-edit"></i>Email
+                           <i class="uil uil-envelope-edit"></i>Send Email
                         </button>
                      </a>
                   </div>
@@ -306,13 +293,9 @@
                data-aos-duration="1000"
                data-aos-delay="600"
             >
-               <a
-                  href="mailto:ariwiradana5@gmail.com"
-                  target="_blank"
-                  class="w-100"
-               >
+               <a href="#contact" class="w-100">
                   <button class="btn btn-primary btn-icon-left">
-                     <i class="uil uil-envelope-edit"></i> Email
+                     <i class="uil uil-envelope-edit"></i> Send Email
                   </button>
                </a>
             </div>
@@ -354,11 +337,10 @@
                   data-aos-duration="1000"
                   data-aos-delay="200"
                >
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est
-                  ut aliquam labore asperiores consectetur dignissimos
-                  assumenda, accusamus molestiae. Voluptas amet repellendus
-                  suscipit, mollitia repudiandae provident pariatur eius iusto
-                  omnis accusantium labore officia architecto.
+                  Hi, I am from Indonesia based from Bali, I have an enthusiasm
+                  for design and I also have design experience both graphic
+                  design and web front end development for last 2 years. Now i
+                  am looking forward to working with you!
                </p>
                <!-- <div class="about-data about-data-web mt-1 mb-2" data-aos="fade-left" data-aos-duration="1000"
                data-aos-delay="400">
@@ -401,12 +383,6 @@
                      </a>
                      <a href="https://github.com/ariwiradana" target="_blank">
                         <i class="uil uil-github-alt btn-about-social"></i>
-                     </a>
-                     <a
-                        href="https://www.youtube.com/channel/UCKU7_NiRjiFIocuGdano69w"
-                        target="_blank"
-                     >
-                        <i class="uil uil-youtube btn-about-social"></i>
                      </a>
                   </div>
                </div>
@@ -488,22 +464,29 @@
                data-aos-duration="1000"
                data-aos-delay="200"
             >
-               <form action="">
+               <form action="" id="form-contact">
                   <input
                      type="text"
+                     id="contact-subject"
                      class="form-input form-fill mb-1"
                      placeholder="Subject"
+                     autocomplete="off"
+                     required
                   />
                   <textarea
-                     name=""
-                     id=""
+                     id="contact-body"
                      class="form-input form-fill mb-1"
                      placeholder="Message"
+                     autocomplete="off"
                      rows="7"
+                     required
                   ></textarea>
                   <div class="d-flex justify-content-end">
-                     <button class="btn btn-primary btn-icon-right">
-                        Send Message<i class="uil uil-angle-right-b"></i>
+                     <button
+                        class="btn btn-primary btn-icon-right submit-contact"
+                        disabled
+                     >
+                        Send Email<i class="uil uil-angle-right-b"></i>
                      </button>
                   </div>
                </form>
@@ -539,12 +522,6 @@
             <a href="https://github.com/ariwiradana" target="_blank">
                <i class="uil uil-github-alt footer-social-icon"></i>
             </a>
-            <a
-               href="https://www.youtube.com/channel/UCKU7_NiRjiFIocuGdano69w"
-               target="_blank"
-            >
-               <i class="uil uil-youtube footer-social-icon"></i>
-            </a>
          </div>
          <div class="footer-content-mobile">
             <a href="#top">
@@ -571,12 +548,7 @@
             <a href="https://github.com/ariwiradana" target="_blank">
                <i class="uil uil-github-alt footer-social-icon"></i>
             </a>
-            <a
-               href="https://www.youtube.com/channel/UCKU7_NiRjiFIocuGdano69w"
-               target="_blank"
-            >
-               <i class="uil uil-youtube footer-social-icon"></i>
-            </a>
+
             <div class="copyright-text">© 2021 Ari Wiradana</div>
          </div>
       </footer>
