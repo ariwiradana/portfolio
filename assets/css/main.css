@@ -10,12 +10,12 @@
 
 :root {
    /* font */
-   --heading-1: 42px;
-   --heading-2: 36px;
-   --heading-3: 24px;
-   --heading-4: 18px;
-   --heading-5: 16px;
-   --body-text: 14px;
+   --heading-1: 40px;
+   --heading-2: 32px;
+   --heading-3: 28px;
+   --heading-4: 24px;
+   --heading-5: 18px;
+   --body-text: 16px;
    --body-text-sm: 12px;
    --btn-text: 16px;
    --btn-text-sm: 13px;
@@ -1983,6 +1983,11 @@ p {
    display: none;
 }
 
+.about-subtitle{
+   font-weight: var(--font-bold);
+   color: var(--text-dark);
+}
+
 @media only screen and (max-width: 700px) {
    .about-container {
       padding: 1.5rem;
@@ -2176,7 +2181,7 @@ p {
 }
 
 .project-item {
-   min-width: 38vw;
+   min-width: 45vw;
    cursor: pointer;
    transition: 0.4s ease;
 }
@@ -2300,7 +2305,7 @@ p {
 
 .skills-item {
    width: 25vw;
-   max-width: 33%;
+   max-width: 23%;
    box-sizing: border-box;
    margin-bottom: 3rem;
 }

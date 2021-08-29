@@ -59,6 +59,7 @@ const darkModeToggle = () => {
 
       // about
       $(".about-title").toggleClass("about-title-dark");
+      $(".about-subtitle").toggleClass("text-light");
 
       // form
       $(".form-input").toggleClass("form-input-dark");
@@ -236,12 +237,6 @@ const project = () => {
       },
       {
          name: "Sipandu Beradat",
-         category: "Web Front End Development",
-         thumb: "Sipandu Beradat Web.png",
-         link: "",
-      },
-      {
-         name: "Sipandu Beradat",
          category: "Mobile UI/UX Design",
          thumb: "Sipandu Beradat Mobile.png",
          link: "",
@@ -345,32 +340,42 @@ const skillContent = document.querySelector(".skills-content");
 let skills = [
    {
       skill: "HTML - CSS",
-      percent: 85,
+      percent: 90,
       icon: "uil uil-html5",
    },
    {
-      skill: "Adobe XD",
+      skill: "Figma",
       percent: 85,
-      icon: "uil uil-adobe-alt",
+      icon: "fab fa-figma",
    },
    {
-      skill: "Adobe Illustrator & Photoshop",
+      skill: "Adobe XD",
+      percent: 80,
+      icon: "uil uil-adobe",
+   },
+   {
+      skill: "Adobe Illustrator",
+      percent: 80,
+      icon: "uil uil-adobe",
+   },
+   {
+      skill: "Adobe Photoshop",
       percent: 80,
       icon: "uil uil-adobe",
    },
    {
       skill: "Javascript",
-      percent: 75,
+      percent: 80,
       icon: "uil uil-java-script",
    },
    {
       skill: "React JS",
-      percent: 65,
+      percent: 75,
       icon: "uil uil-react",
    },
    {
       skill: "PHP",
-      percent: 55,
+      percent: 60,
       icon: "fab fa-php",
    },
 ];
@@ -410,8 +415,5 @@ btnContact.addEventListener("click", (e) => {
    e.preventDefault();
 
    window.location.href = `mailto:ariwiradana5@gmail.com?subject=${subject.value}&body=${body.value}`;
-
-   setInterval(() => {
-      formContact.reset();
-   }, 3000);
+   formContact.reset()
 });
