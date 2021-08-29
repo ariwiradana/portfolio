@@ -2181,7 +2181,7 @@ p {
 }
 
 .project-item {
-   min-width: 45vw;
+   min-width: 40vw;
    cursor: pointer;
    transition: 0.4s ease;
 }
