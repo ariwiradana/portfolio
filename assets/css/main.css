@@ -769,6 +769,7 @@ p {
 
 .btn-primary:disabled {
    background-color: var(--primary-disabled);
+   cursor: unset;
 }
 
 .btn-light {
