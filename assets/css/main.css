@@ -1418,6 +1418,16 @@ p {
    font-weight: var(--font-bold);
 }
 
+.nav-icon::before{
+   font-size: var(--heading-3);
+   cursor: pointer;
+   transition: .5s ease;
+}
+
+.nav-icon:hover::before{
+   animation: iconDarkModeAnim 0.5s infinite ease-out;
+}
+
 .dark-mode-icon {
    height: 32px;
    width: 32px;
